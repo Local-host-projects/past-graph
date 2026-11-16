@@ -138,7 +138,14 @@ export default function VideoStage() {
 
   /* ---- player + currentTime polling --------------------------------------------- */
   useEffect(() => {
-    if (!video) return;
+    /* the box only exists once the loading branch is gone: setVideo and
+       setLoading flush in separate commits (awaits between them), so the
+       effect must wait for loading=false or it runs against a tree with
+       no playerBox and never retries */
+    if (!video || loading) return;
+    /* a premium video waits for the /api/me verdict before mounting: construct
+       early and the gate swap (or the gate itself) would orphan the player */
+    if (isPremiumVideo(video.youtube_id) && premium === null) return;
     let timer: ReturnType<typeof setInterval>;
     let cancelled = false;
     (async () => {
@@ -164,6 +171,9 @@ export default function VideoStage() {
               /* exposed for test drives: seeking the real player from evaluate() */
               try { (window as any).__pgPlayer = e.target; } catch {}
             },
+            onError: (e: any) => {
+              console.error("pg-player-error", e?.data);
+            },
           },
         });
       } catch (err) {
@@ -183,7 +193,7 @@ export default function VideoStage() {
       try { playerBox.current?.replaceChildren(); } catch {}
       playerRef.current = null;
     };
-  }, [video, bootT]);
+  }, [video, bootT, premium, loading]);
 
   /* ---- the live slice: the annotation window the viewer is inside right now ---- */
   const live = annotations.find((a) => now >= a.t_start && now < a.t_end && a.id !== dismissed);
