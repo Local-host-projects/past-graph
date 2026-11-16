@@ -99,11 +99,12 @@ export default function PracticeApp() {
         );
         setHasPaper(Object.fromEntries(list));
       }
-      const { data: auth } = await supabase.auth.getUser();
-      if (auth?.user) {
-        setUser(auth.user.id);
-        const { data: p } = await supabase.from("profiles").select("is_premium").eq("id", auth.user.id).maybeSingle();
-        setPremium(Boolean(p?.is_premium));
+      /* who's asking — the session lives in httpOnly cookies the browser
+         client can't see, so identity and premium state both ride /api/me */
+      const me = await fetch("/api/me").then((r) => r.json()).catch(() => ({ signedIn: false, premium: false }));
+      if ((me as { signedIn?: boolean }).signedIn) {
+        setUser(String((me as { userId?: string }).userId ?? ""));
+        setPremium(Boolean((me as { premium?: boolean }).premium));
       }
     })();
   }, [supabase]);
@@ -124,23 +125,21 @@ export default function PracticeApp() {
     [supabase]
   );
 
-  /** answered before? the sheet remembers — evidence for homesickness in the hall. */
+  /** answered before? the sheet remembers — through the server, which owns
+      the session; no user-state guard here because the boot sequence starts
+      the paper before /api/me resolves, and the server answers anon with {}. */
   const prefill = useCallback(
     async (rows: Question[]) => {
-      if (!user || !rows.length) return;
-      const { data } = await supabase
-        .from("attempts")
-        .select("question_id,correct,picked")
-        .in("question_id", rows.map((r) => r.id))
-        .eq("user_id", user)
-        .order("created_at");
-      const m: Record<string, { letter: string; correct: boolean }> = {};
-      for (const r of ((data as Array<{ question_id: string; correct: boolean; picked: string | null }>) ?? [])) {
-        m[r.question_id] = { letter: r.picked ?? "", correct: Boolean(r.correct) };
+      if (!rows.length) return;
+      try {
+        const res = await fetch(`/api/attempt?ids=${rows.map((r) => r.id).join(",")}`);
+        const { map } = (await res.json()) as { map: Record<string, { letter: string; correct: boolean }> };
+        if (map && Object.keys(map).length) setPicks((prev) => ({ ...map, ...prev }));
+      } catch {
+        /* offline / anon — the sheet stays local */
       }
-      if (Object.keys(m).length) setPicks((prev) => ({ ...m, ...prev }));
     },
-    [supabase, user]
+    []
   );
 
   /** subject → one year → 30 questions, straight into the hall. */
@@ -329,11 +328,15 @@ export default function PracticeApp() {
       const correct = letter === qq.answer;
       setPicks((m) => ({ ...m, [qq.id]: { letter, correct } }));
       sfx(correct ? "correct" : "wrong");
-      if (user) {
-        await supabase.from("attempts").insert({ user_id: user, question_id: qq.id, picked: letter, correct });
-      }
+      /* the server owns the record: it re-computes `correct` from the
+         question row, so the client never asserts its own mark */
+      void fetch("/api/attempt", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ question_id: qq.id, picked: letter }),
+      }).catch(() => {});
     },
-    [picks, q, user, supabase]
+    [picks, q]
   );
 
   /* ---- reels: the scroll-snap full-screen player ------------------- */

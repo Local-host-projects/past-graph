@@ -44,3 +44,13 @@ create policy "insert own claim" on public.transfer_claims for insert to authent
 
 create index if not exists claims_user_idx on public.transfer_claims (user_id, created_at desc);
 create index if not exists claims_status_idx on public.transfer_claims (status) where status = 'pending';
+
+-- ─────────────────────────────────────────────────────────────────────────
+-- Sims kinds: genetics (punnett), economics (demand), optics (snell).
+-- The engine in components/Sim.tsx renders these; the DB check needs widening.
+-- Idempotent — run in the Supabase SQL editor, then rerun
+--   node scripts/expand-content.mjs --go
+-- ─────────────────────────────────────────────────────────────────────────
+alter table public.sims drop constraint if exists sims_kind_check;
+alter table public.sims add constraint sims_kind_check
+  check (kind in ('projectile','wave','ohm','punnett','demand','snell'));

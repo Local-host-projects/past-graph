@@ -62,7 +62,7 @@ export type Sim = {
   topic_slug: string;
   title: string;
   blurb: string;
-  kind: "projectile" | "wave" | "ohm";
+  kind: "projectile" | "wave" | "ohm" | "punnett" | "demand" | "snell";
 };
 
 export type Article = {

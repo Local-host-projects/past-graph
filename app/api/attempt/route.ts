@@ -13,6 +13,37 @@ import { createClient } from "@/utils/supabase/server";
 
 export const dynamic = "force-dynamic";
 
+/**
+ * GET /api/attempt?ids=q1,q2,… — the paper sheet's memory.
+ * Same server-session logic as the feed's prefill: the browser client
+ * can't read the httpOnly cookies, so it asks here for "what did I pick
+ * on these questions last time". Anonymous → empty map, local state only.
+ */
+export async function GET(req: NextRequest) {
+  const sb = await createClient();
+  const { data: auth } = await sb.auth.getUser();
+  if (!auth?.user) return NextResponse.json({ map: {} });
+
+  const ids = String(req.nextUrl.searchParams.get("ids") ?? "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .slice(0, 200);
+  if (!ids.length) return NextResponse.json({ map: {} });
+
+  const { data } = await sb
+    .from("attempts")
+    .select("question_id,picked,correct")
+    .in("question_id", ids)
+    .eq("user_id", auth.user.id)
+    .order("created_at");
+  const map: Record<string, { letter: string; correct: boolean }> = {};
+  for (const r of (data as Array<{ question_id: string; picked: string | null; correct: boolean }>) ?? []) {
+    map[r.question_id] = { letter: r.picked ?? "", correct: Boolean(r.correct) };
+  }
+  return NextResponse.json({ map });
+}
+
 export async function POST(req: NextRequest) {
   const sb = await createClient();
   const { data: auth } = await sb.auth.getUser();

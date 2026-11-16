@@ -111,8 +111,11 @@ export default function FeedApp() {
       setSignedIn(Boolean(data.signedIn));
       if (data.attempted && Object.keys(data.attempted).length) {
         /* server-owned prefill — the browser session may be invisible to the
-           JS client (httpOnly cookies), so the answered map rides with the feed */
-        setAnswers((prev) => ({ ...prev, ...data.attempted }));
+           JS client (httpOnly cookies), so the answered map rides with the feed;
+           the route says `picked`, the sheet says `letter` — normalise */
+        const norm: Record<string, { letter: string; correct: boolean }> = {};
+        for (const [qid, v] of Object.entries(data.attempted)) norm[qid] = { letter: v.picked, correct: v.correct };
+        setAnswers((prev) => ({ ...norm, ...prev }));
       }
       setItems(
         (data.items ?? []).map((x, i) => {
@@ -397,6 +400,11 @@ export default function FeedApp() {
                   <p className="text-[15.5px] font-semibold leading-snug">{it.title}</p>
                   <p className="mono text-[11px] mt-1 muted">{it.channel} · {n} timed pop-up{n === 1 ? "" : "s"}</p>
                 </a>
+                {n >= 2 && (
+                  <span className="chip chip-leaf !text-[11px] !py-1 !px-3 mt-2" style={{ display: "inline-flex" }}>
+                    ⏸ quiz checkpoints — it tests you on earlier sections
+                  </span>
+                )}
                 <div className="mt-3 grid gap-1.5">
                   {clips.map((c, k) => (
                     <a

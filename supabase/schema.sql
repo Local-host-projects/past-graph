@@ -70,7 +70,7 @@ create table public.sims (
   topic_slug text not null references public.topics(slug) on delete cascade,
   title      text not null,
   blurb      text not null default '',
-  kind       text not null check (kind in ('projectile','wave','ohm')),
+  kind       text not null check (kind in ('projectile','wave','ohm','punnett','demand','snell')),
   created_at timestamptz not null default now()
 );
 

@@ -1,0 +1,173 @@
+/**
+ * Physics top-up — constructive multi-step questions (the engine's showcase)
+ * plus singles for the thin topics (magnetism, modern physics, measurement).
+ */
+const e = (topic, stem, opts, ans, expl, f = false, d = 2) => ({ topic, stem, opts, ans, expl, f, d, steps: null });
+
+export const singles = [
+  e("magnetism", "The magnetic field lines inside a bar magnet run", ["from north pole to south pole outside only", "from south pole to north pole inside the magnet", "from north to south inside", "in closed loops with no direction"], "B", "Field lines form closed loops: north→south outside the magnet, south→north through the inside.", true),
+  e("magnetism", "The e.m.f. induced in a conductor moving through a magnetic field depends on all of these EXCEPT the", ["length of the conductor", "speed of the conductor", "magnetic flux density", "resistance of the voltmeter"], "D", "E = Blv — the meter's resistance affects the reading, not the induced e.m.f."),
+  e("magnetism", "Two parallel wires carrying currents in the same direction", ["repel each other", "attract each other", "exert no force", "twist about each other"], "B", "Like currents attract; opposite currents repel — remember the field lines between them crowd together."),
+  e("modern-physics", "In the photoelectric effect, increasing the intensity of incident light (above threshold) increases the", ["maximum kinetic energy of photoelectrons", "number of photoelectrons emitted per second", "threshold frequency", "work function"], "B", "Intensity sets how MANY photons arrive (more electrons); frequency alone sets their maximum energy."),
+  e("modern-physics", "The half-life of a radioactive element is the time taken for", ["all the atoms to decay", "half the atoms present to decay", "the mass to halve twice", "the activity to double"], "B", "After each half-life, whatever remains at that moment halves again.", true),
+  e("modern-physics", "A radioactive isotope emits an alpha particle. Its mass number decreases by", ["1", "2", "4", "0"], "C", "An alpha particle carries 2 protons + 2 neutrons: mass number down by 4, atomic number down by 2."),
+  e("measurement", "Which instrument is best for measuring the internal diameter of a pipe?", ["metre rule", "micrometer screw gauge", "vernier callipers (upper jaws)", "tape measure"], "C", "The upper (internal) jaws of vernier callipers are made exactly for inside measurements."),
+  e("measurement", "A student records 10 oscillations as 12.4 s. The period of the pendulum is", ["12.4 s", "1.24 s", "0.124 s", "124 s"], "B", "Period = total time ÷ number of oscillations = 12.4 ÷ 10 = 1.24 s.", true),
+];
+
+export const multis = [
+  {
+    topic: "light-optics",
+    stem: "An object stands 30 cm from a converging lens of focal length 10 cm. Locate the image and give its magnification.",
+    opts: ["15 cm behind the lens, magnification 0.5", "20 cm behind the lens, magnification 2", "10 cm in front, magnification 1", "30 cm behind, magnification 1"],
+    ans: "A",
+    expl: "1/f = 1/u + 1/v with u = 30, f = 10 gives v = 15 cm (real, behind the lens) and m = v/u = 0.5.",
+    f: true,
+    d: 3,
+    steps: [
+      { kind: "math", title: "Write the thin-lens equation", note: "Real-is-positive convention: 1/f = 1/u + 1/v.", content: "1/10 = 1/30 + 1/v" },
+      { kind: "math", title: "Solve for the image distance", note: "Common denominator 30.", content: "1/v = 1/10 − 1/30 = 2/30 → v = 15 cm" },
+      { kind: "math", title: "Magnification", note: "Linear magnification is the image distance ratio.", content: "m = v/u = 15/30 = 0.5 — real, inverted, half-size" },
+    ],
+  },
+  {
+    topic: "dynamics",
+    stem: "A 2 kg trolley moving at 5 m/s collides with and couples to a stationary 3 kg trolley. Find their common velocity.",
+    opts: ["1 m/s", "2 m/s", "2.5 m/s", "5 m/s"],
+    ans: "B",
+    expl: "Momentum before = 2×5 = 10 kg·m/s; after = 5v, so v = 2 m/s.",
+    f: false,
+    d: 2,
+    steps: [
+      { kind: "math", title: "Momentum before impact", note: "The second trolley contributes nothing — it is at rest.", content: "p = 2 × 5 = 10 kg·m/s" },
+      { kind: "math", title: "Momentum after coupling", note: "They move as one 5 kg body at common velocity v.", content: "p = (2 + 3) v = 5v" },
+      { kind: "math", title: "Equate and solve", note: "Momentum is conserved in collisions (energy is not, here).", content: "5v = 10 → v = 2 m/s" },
+    ],
+  },
+  {
+    topic: "work-energy",
+    stem: "A crane lifts a 5 kg load through 4 m in 2 s (g = 10 m/s²). The average power developed is",
+    opts: ["50 W", "100 W", "200 W", "20 W"],
+    ans: "B",
+    expl: "Work = mgh = 5×10×4 = 200 J; power = 200/2 = 100 W.",
+    f: true,
+    d: 2,
+    steps: [
+      { kind: "math", title: "Work done against gravity", note: "Lifting at steady speed means the force equals the weight.", content: "W = mgh = 5 × 10 × 4 = 200 J" },
+      { kind: "math", title: "Divide by the time taken", note: "Power is the rate of doing that work.", content: "P = W/t = 200 / 2 = 100 W" },
+      { kind: "math", title: "Sanity-check the numbers", note: "5 kg is small but 4 m in 2 s is brisk — ~100 W is plausible.", content: "100 W ≈ ⅐ horsepower" },
+    ],
+  },
+  {
+    topic: "fluids-heat",
+    stem: "0.5 kg of water at 80 °C is mixed with 0.5 kg of water at 20 °C. Ignoring losses, the final temperature is",
+    opts: ["30 °C", "40 °C", "50 °C", "60 °C"],
+    ans: "C",
+    expl: "Equal masses and equal specific heats mean the mixture sits halfway: 50 °C.",
+    f: false,
+    d: 2,
+    steps: [
+      { kind: "math", title: "Heat lost = heat gained", note: "Same substance, same c on both sides — it cancels.", content: "m c (80 − T) = m c (T − 20)" },
+      { kind: "math", title: "Cancel the common factors", note: "Equal masses too, so the algebra is symmetric.", content: "80 − T = T − 20" },
+      { kind: "math", title: "Solve", note: "The equal-mass shortcut: midpoint of the two temperatures.", content: "2T = 100 → T = 50 °C" },
+    ],
+  },
+  {
+    topic: "waves-sound",
+    stem: "A tuning fork of frequency 500 Hz produces waves of wavelength 0.66 m in air. The speed of sound is",
+    opts: ["165 m/s", "330 m/s", "660 m/s", "758 m/s"],
+    ans: "B",
+    expl: "v = fλ = 500 × 0.66 = 330 m/s — the classic room-temperature value.",
+    f: true,
+    d: 1,
+    steps: [
+      { kind: "math", title: "State the wave equation", note: "Speed ties frequency and wavelength together.", content: "v = f λ" },
+      { kind: "math", title: "Substitute", note: "500 Hz × 0.66 m — watch the decimal.", content: "v = 500 × 0.66 = 330 m/s" },
+      { kind: "math", title: "Check against known air speeds", note: "Sound in air runs ~330–350 m/s at room temperature.", content: "330 m/s ✓ plausible" },
+    ],
+  },
+  {
+    topic: "light-optics",
+    stem: "A ray of light strikes an air–glass boundary (n = 1.5) at 30° to the normal. Find the angle of refraction.",
+    opts: ["19.5°", "30°", "48.6°", "20.5°"],
+    ans: "A",
+    expl: "sin r = sin 30° / 1.5 = 0.333, so r ≈ 19.5° — the ray bends toward the normal.",
+    f: false,
+    d: 3,
+    steps: [
+      { kind: "math", title: "Apply Snell's law", note: "n₁ sin θ₁ = n₂ sin θ₂, air ≈ 1.0.", content: "1.0 × sin 30° = 1.5 × sin r" },
+      { kind: "math", title: "Isolate sin r", note: "Divide through by the refractive index.", content: "sin r = 0.5 / 1.5 = 0.333" },
+      { kind: "math", title: "Invert the sine", note: "Glass is denser, so the angle must SHRINK — sanity holds.", content: "r = sin⁻¹ 0.333 ≈ 19.5°" },
+    ],
+  },
+  {
+    topic: "electricity",
+    stem: "Resistors of 6 Ω and 3 Ω are connected in parallel across a 12 V battery. The total current drawn is",
+    opts: ["2 A", "4 A", "6 A", "9 A"],
+    ans: "C",
+    expl: "Parallel pair = (6×3)/(6+3) = 2 Ω; I = 12/2 = 6 A.",
+    f: true,
+    d: 2,
+    steps: [
+      { kind: "math", title: "Combine the parallel pair", note: "Product over sum for two resistors.", content: "R = (6 × 3)/(6 + 3) = 2 Ω" },
+      { kind: "math", title: "Ohm's law for the whole circuit", note: "Both resistors see the full 12 V.", content: "I = V/R = 12 / 2 = 6 A" },
+      { kind: "math", title: "Cross-check branch currents", note: "3 A through the 6 Ω plus 4 A through the 3 Ω.", content: "12/6 + 12/3 = 2 + 4 = 6 A ✓" },
+    ],
+  },
+  {
+    topic: "waves-sound",
+    stem: "A wave has frequency 25 Hz and speed 20 m/s. The distance between successive crests is",
+    opts: ["0.8 m", "1.25 m", "5 m", "500 m"],
+    ans: "A",
+    expl: "λ = v/f = 20/25 = 0.8 m — crest-to-crest distance is the wavelength.",
+    f: false,
+    d: 2,
+    steps: [
+      { kind: "math", title: "Rearrange the wave equation", note: "Solve for wavelength instead of speed.", content: "λ = v / f" },
+      { kind: "math", title: "Substitute", note: "20 m/s divided by 25 Hz.", content: "λ = 20 / 25 = 0.8 m" },
+      { kind: "math", title: "Interpret", note: "Successive crests are one wavelength apart.", content: "0.8 m ✓" },
+    ],
+  },
+  {
+    topic: "modern-physics",
+    stem: "The energy of a photon of frequency 5 × 10¹⁴ Hz is about (h = 6.6 × 10⁻³⁴ J·s)",
+    opts: ["1.1 × 10⁻¹⁹ J", "3.3 × 10⁻¹⁹ J", "6.6 × 10⁻¹⁹ J", "9.9 × 10⁻³⁴ J"],
+    ans: "B",
+    expl: "E = hf = 6.6×10⁻³⁴ × 5×10¹⁴ = 33×10⁻²⁰ = 3.3×10⁻¹⁹ J.",
+    f: false,
+    d: 3,
+    steps: [
+      { kind: "math", title: "State Planck's relation", note: "Photon energy is proportional to frequency.", content: "E = h f" },
+      { kind: "math", title: "Multiply the powers of ten", note: "10⁻³⁴ × 10¹⁴ = 10⁻²⁰.", content: "E = 6.6 × 5 × 10⁻²⁰" },
+      { kind: "math", title: "Finish the arithmetic", note: "33 × 10⁻²⁰ normalises to 3.3 × 10⁻¹⁹.", content: "E = 3.3 × 10⁻¹⁹ J" },
+    ],
+  },
+  {
+    topic: "fluids-heat",
+    stem: "A gas at 27 °C occupies 2 dm³ at 1 atm. Heated to 127 °C at constant pressure, its volume becomes",
+    opts: ["2.33 dm³", "2.67 dm³", "3.0 dm³", "2.0 dm³"],
+    ans: "B",
+    expl: "Kelvin first: 300 K → 400 K. Charles: V₂ = 2 × 400/300 = 2.67 dm³.",
+    f: false,
+    d: 3,
+    steps: [
+      { kind: "math", title: "Convert to kelvin", note: "Celsius directly in gas laws is the classic trap.", content: "T₁ = 300 K, T₂ = 400 K" },
+      { kind: "math", title: "Apply Charles's law", note: "V ∝ T at constant pressure.", content: "V₂ = V₁ × T₂/T₁ = 2 × 400/300" },
+      { kind: "math", title: "Compute", note: "⅓ more volume for ⅓ more kelvin.", content: "V₂ = 2.67 dm³" },
+    ],
+  },
+  {
+    topic: "dynamics",
+    stem: "A 0.5 kg ball moving at 8 m/s is stopped by a boot in 0.1 s. The average force applied is",
+    opts: ["4 N", "40 N", "80 N", "0.4 N"],
+    ans: "B",
+    expl: "Impulse = Ft = Δp = 0.5×8 = 4 kg·m/s, so F = 4/0.1 = 40 N.",
+    f: true,
+    d: 2,
+    steps: [
+      { kind: "math", title: "Momentum change", note: "The ball ends at rest, so Δp is the full initial momentum.", content: "Δp = mΔv = 0.5 × 8 = 4 kg·m/s" },
+      { kind: "math", title: "Impulse–momentum theorem", note: "Force times contact time equals momentum change.", content: "F × 0.1 = 4" },
+      { kind: "math", title: "Solve for force", note: "Shorter contact time means bigger force — that's why kicking stings.", content: "F = 4 / 0.1 = 40 N" },
+    ],
+  },
+];

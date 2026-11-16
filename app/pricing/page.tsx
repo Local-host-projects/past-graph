@@ -4,13 +4,13 @@ import CheckoutSection from "@/components/CheckoutSection";
 export const metadata: Metadata = { title: "Premium — Past Graph" };
 
 const included = [
-  "Every question 2000–2025 (five recent years always free)",
+  "Every paper 2000–2020 — the full archive",
   "Constructive multi-step questions with step-by-step reveals",
+  "Deep-dive videos with quiz checkpoints at every section",
+  "The deep article shelf",
+  "Advanced sims — refraction, genetics, markets",
   "Live recommendation column while you practise",
-  "Timestamped YouTube pop-ups with side-by-side simulations",
-  "Sims lab: projectile motion, waves, Ohm's law",
-  "Pathfinder subject-combination advisor",
-  "All six months of the UTME season, one payment",
+  "One payment covers the whole six-month season",
 ];
 
 export default function Pricing() {
@@ -21,7 +21,7 @@ export default function Pricing() {
         <h1 className="display text-[38px] sm:text-[54px] mt-4">₦750.<br />The whole season.</h1>
         <p className="muted text-[16px] mt-3 max-w-[52ch] mx-auto leading-relaxed">
           One payment covers six months — the length of a UTME cycle. No renewal traps, no per-subject fees.
-          Five recent years stay free forever.
+          The recent years stay free forever.
         </p>
       </div>
 
@@ -31,10 +31,11 @@ export default function Pricing() {
           <p className="text-[13px] muted mt-0.5">No account required to start</p>
           <p className="display text-[40px] mt-4">₦0</p>
           <ul className="mt-4 grid gap-2 text-[14px]">
-            <li>2021–2025 questions</li>
-            <li>All articles and video annotations</li>
-            <li>Sims lab</li>
-            <li>Pathfinder combinations</li>
+            <li>2021–2025 papers in every subject — economics included</li>
+            <li>Free video shelf with timed pop-ups and section quizzes</li>
+            <li>Starter articles and starter sims</li>
+            <li>Pathfinder subject combinations</li>
+            <li>No account required to start</li>
           </ul>
           <a href="/practice" className="btn btn-secondary w-full mt-6">Start free</a>
         </div>

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { createClient } from "@/utils/supabase/client";
 import type { Video, Annotation, Sim, Article } from "@/lib/types";
+import { isPremiumVideo } from "@/lib/premium-content";
 import SimView from "./Sim";
 import { sfx } from "@/lib/sfx";
 
@@ -77,6 +78,23 @@ export default function VideoStage() {
   const [loading, setLoading] = useState(true);
   const [wide, setWide] = useState(false);
 
+  /* ---- retrieval popups: the video quizzes you on its own past -------------------
+     entering section k pulls a question from section k-1's topic; a wrong answer
+     offers the jump back to that section's timestamp. the server schedules these
+     (mastery-aware), the watcher only fires them at the right moment. */
+  type WatchQuiz = {
+    id: string;
+    when_t: number;
+    back_t: number;
+    back_title: string;
+    question: { id: string; stem: string; options: { label: string; text: string }[]; answer: string; explanation: string | null };
+  };
+  const [quizzes, setQuizzes] = useState<WatchQuiz[]>([]);
+  const [quiz, setQuiz] = useState<WatchQuiz | null>(null);
+  const [quizPick, setQuizPick] = useState<string | null>(null);
+  const firedRef = useRef<Set<string>>(new Set());
+  const [premium, setPremium] = useState<boolean | null>(null);
+
   /* ---- side-by-side when the viewport is wider than tall (incl. rotated phones) ---- */
   useEffect(() => {
     const mq = window.matchMedia("(min-aspect-ratio: 6/5)");
@@ -97,13 +115,26 @@ export default function VideoStage() {
     (async () => {
       const { data: v } = await supabase.from("videos").select("*").eq("id", params.id).maybeSingle();
       setVideo(v as Video);
+      /* the premium shelf is enforced here: a premium video plays for
+         premium members, and shows the gate to everyone else */
+      const me = await fetch("/api/me").then((r) => r.json()).catch(() => ({ premium: false }));
+      setPremium(Boolean((me as { premium?: boolean }).premium));
       if (v) {
         const { data: a } = await supabase.from("video_annotations").select("*").eq("video_id", v.id).order("t_start");
         setAnnotations((a as Annotation[]) ?? []);
+        try {
+          const res = await fetch(`/api/watch-quiz?video=${v.id}`);
+          const data = (await res.json()) as { quizzes?: WatchQuiz[] };
+          /* a deep start (`?t=`) lands mid-video: boundaries before it never fire */
+          for (const qz of data.quizzes ?? []) {
+            if (bootT == null || qz.when_t > bootT + 2) setQuizzes((prev) => [...prev, qz]);
+            else firedRef.current.add(qz.id);
+          }
+        } catch { /* quiz schedule is optional — the watcher works without it */ }
       }
       setLoading(false);
     })();
-  }, [params.id, supabase]);
+  }, [params.id, supabase, bootT]);
 
   /* ---- player + currentTime polling --------------------------------------------- */
   useEffect(() => {
@@ -113,16 +144,31 @@ export default function VideoStage() {
     (async () => {
       const YT = await loadYouTubeAPI();
       if (cancelled || !playerBox.current) return;
-      playerRef.current = new YT.Player(playerBox.current, {
-        videoId: video.youtube_id,
-        playerVars: { rel: 0, modestbranding: 1, playsinline: 1 },
-        events: {
-          onReady: (e: any) => {
-            if (bootT != null) e.target.seekTo(bootT, true);
-            e.target.playVideo();
+      /* YT.Player REPLACES its target element — hand it a throwaway child div
+         instead of the React-managed one, so strict-mode remounts rebuild
+         cleanly instead of hydrating a detached ghost. */
+      const host = document.createElement("div");
+      host.style.width = "100%";
+      host.style.height = "100%";
+      playerBox.current.appendChild(host);
+      try {
+        playerRef.current = new YT.Player(host, {
+          videoId: video.youtube_id,
+          /* enablejsapi + origin: current widgetapi builds refuse to mount (and
+             sometimes throw) without them — the documented embedder contract */
+          playerVars: { enablejsapi: 1, origin: window.location.origin, rel: 0, modestbranding: 1, playsinline: 1 },
+          events: {
+            onReady: (e: any) => {
+              if (bootT != null) e.target.seekTo(bootT, true);
+              e.target.playVideo();
+              /* exposed for test drives: seeking the real player from evaluate() */
+              try { (window as any).__pgPlayer = e.target; } catch {}
+            },
           },
-        },
-      });
+        });
+      } catch (err) {
+        console.error("pg-player-mount-fail", err);
+      }
       timer = setInterval(() => {
         try {
           const t = playerRef.current?.getCurrentTime?.();
@@ -134,12 +180,51 @@ export default function VideoStage() {
       cancelled = true;
       clearInterval(timer);
       try { playerRef.current?.destroy?.(); } catch {}
+      try { playerBox.current?.replaceChildren(); } catch {}
       playerRef.current = null;
     };
   }, [video, bootT]);
 
   /* ---- the live slice: the annotation window the viewer is inside right now ---- */
   const live = annotations.find((a) => now >= a.t_start && now < a.t_end && a.id !== dismissed);
+
+  /* ---- fire the scheduled quiz once the viewer is 3s into the new section ------- */
+  useEffect(() => {
+    if (quiz || panel) return; // one retrieval prompt at a time; companion open → wait
+    const due = quizzes.find((q) => !firedRef.current.has(q.id) && now >= q.when_t + 3);
+    if (due) {
+      firedRef.current.add(due.id);
+      setQuiz(due);
+      setQuizPick(null);
+      sfx("open");
+    }
+  }, [now, quizzes, quiz, panel]);
+
+  function answerQuiz(letter: string) {
+    if (!quiz || quizPick) return;
+    setQuizPick(letter);
+    const correct = letter === quiz.question.answer;
+    sfx(correct ? "correct" : "wrong");
+    /* persistence rides the server (same route the feed uses) */
+    try {
+      void fetch("/api/attempt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question_id: quiz.question.id, picked: letter }),
+      });
+    } catch { /* anonymous or offline: stays local */ }
+  }
+
+  function closeQuiz() {
+    setQuiz(null);
+    setQuizPick(null);
+  }
+
+  function returnToSection() {
+    if (!quiz) return;
+    seek(quiz.back_t);
+    closeQuiz();
+  }
 
   /* ---- split divider: 1:1 tracking, rubber-band bounds, velocity spring handoff --- */
   const drag = useRef<{ startX: number; startSplit: number; width: number; history: { t: number; x: number }[] } | null>(null);
@@ -279,6 +364,8 @@ export default function VideoStage() {
     );
   }
 
+  const gated = isPremiumVideo(video.youtube_id) && premium === false;
+
   return (
     <div className="max-w-6xl mx-auto px-5 sm:px-8 py-10">
       <a href="/videos" className="text-[13px] muted hover:underline">← All videos</a>
@@ -288,9 +375,62 @@ export default function VideoStage() {
       <div ref={gridRef} className={`watch-grid mt-6 ${wide && panel ? "split" : ""}`}>
         {/* main column: player with the note overlaid ON it, then the timestamp trail */}
         <div className="watch-main min-w-0">
+          {gated ? (
+            <div className="slip p-6 pl-9 relative" style={{ boxShadow: "4px 5px 0 rgba(32,26,17,0.14)" }}>
+              <p className="mono text-[11px] tracking-[0.14em]" style={{ color: "var(--muted)" }}>PREMIUM ARCHIVE · ★</p>
+              <p className="display text-[22px] mt-1.5">{video.title}</p>
+              <p className="text-[14px] muted mt-2 leading-relaxed max-w-[55ch]">
+                This deep-dive sits on the premium shelf — {annotations.length || "several"} timestamped sections,
+                quiz checkpoints at every boundary, and the companion sims. ₦750 covers the whole six-month season.
+              </p>
+              <div className="flex items-center gap-3 mt-4 flex-wrap">
+                <a href="/pricing" className="btn btn-primary !py-2 !px-5 !text-[14px]">Get Premium · ₦750</a>
+                <a href="/videos" className="text-[13.5px] muted underline">Browse the free shelf instead</a>
+              </div>
+            </div>
+          ) : (
           <div className="slip p-1.5 relative" style={{ boxShadow: "4px 5px 0 rgba(32,26,17,0.14)" }}>
             <div className="relative aspect-video w-full rounded-[14px] overflow-hidden bg-black">
               <div ref={playerBox} className="w-full h-full" />
+              {/* retrieval popups live ON the video, up top; the note pill keeps the bottom */}
+              {quiz && (
+                <div className="quiz-overlay" role="dialog" aria-label="Quick check from an earlier section">
+                  <div className="quiz-card">
+                    <div className="quiz-head">
+                      <span className="quiz-kicker">Quick check · {fmt(quiz.back_t)}</span>
+                      <span className="quiz-src">from “{quiz.back_title.length > 34 ? quiz.back_title.slice(0, 34) + "…" : quiz.back_title}”</span>
+                    </div>
+                    <p className="quiz-stem">{quiz.question.stem}</p>
+                    {!quizPick && (
+                      <div className="quiz-opts">
+                        {quiz.question.options.map((o) => (
+                          <button key={o.label} className="quiz-opt" onClick={() => answerQuiz(o.label)}>
+                            <span className="l">{o.label}</span>
+                            <span className="t">{o.text}</span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                    {quizPick && quizPick === quiz.question.answer && (
+                      <div className="quiz-verdict q-ok">
+                        <span className="v">Clean ✓</span>
+                        <span className="w">{quiz.question.explanation ?? "That's the move."}</span>
+                        <button className="quiz-act" onClick={closeQuiz}>Back to the video</button>
+                      </div>
+                    )}
+                    {quizPick && quizPick !== quiz.question.answer && (
+                      <div className="quiz-verdict q-bad">
+                        <span className="v">Not quite</span>
+                        <span className="w">This was laid down at {fmt(quiz.back_t)}. Rewatch that bit, then it sticks.</span>
+                        <div className="quiz-acts">
+                          <button className="quiz-act q-back" onClick={returnToSection}>↺ Return to {fmt(quiz.back_t)} — {quiz.back_title.length > 26 ? quiz.back_title.slice(0, 26) + "…" : quiz.back_title}</button>
+                          <button className="quiz-act q-later" onClick={closeQuiz}>Keep watching</button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
               {/* the pop-up lives ON the video — unmissable, never docked under it */}
               {live && (
                 <div className="watch-overlay" aria-live="polite">
@@ -315,16 +455,17 @@ export default function VideoStage() {
               )}
             </div>
           </div>
+          )}
 
           {/* idle line only when nothing is live right now */}
           <div className="min-h-[20px] mt-2">
-            {!live && annotations.length > 0 && (
+            {!gated && !live && annotations.length > 0 && (
               <p className="text-[12px] muted">Timed notes pop onto the video as the presenter reaches them.</p>
             )}
           </div>
 
           {/* trail: the whole map, tamper-proof */}
-          {annotations.length > 0 && (
+          {!gated && annotations.length > 0 && (
             <div className="mt-2 flex flex-wrap gap-2">
               {annotations.map((a) => (
                 <button
