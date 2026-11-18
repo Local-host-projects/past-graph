@@ -75,6 +75,9 @@ export default function PracticeApp() {
   // constructive gate: "the answer only exists once you built the picture"
   const [constructed, setConstructed] = useState<Record<string, boolean>>({});
   const constructedRef = useRef<Record<string, boolean>>({});
+  /* beat-my-path: wrong picks this session, per question — the bar a friend
+     must duck under. counted in the open; shared only on the sender's word. */
+  const wrongRef = useRef<Record<string, number>>({});
   const markConstructed = useCallback((id: string) => {
     if (constructedRef.current[id]) return;
     constructedRef.current[id] = true;
@@ -320,12 +323,18 @@ export default function PracticeApp() {
     async (qq: Question, letter: string) => {
       if (!q || qq.id !== q.id) return;
       if (picks[qq.id]) return; // one sheet, one pick — going back never resets it
+      /* keyboard A–D can't commit a multi-slot blanks arrangement — the word bank owns that */
+      if (qq.kind === "blanks" && qq.answer.includes(",") && !letter.includes(",")) {
+        setHintNote("Fill every blank from the word bank, then lock in.");
+        return;
+      }
       const needsBuild = qq.kind === "multi" && (qq.steps?.length ?? 0) > 1;
       if (needsBuild && !constructedRef.current[qq.id]) {
         setHintNote("Build every step first — the choices appear when the construction is complete.");
         return;
       }
       const correct = letter === qq.answer;
+      if (!correct) wrongRef.current[qq.id] = (wrongRef.current[qq.id] ?? 0) + 1;
       setPicks((m) => ({ ...m, [qq.id]: { letter, correct } }));
       sfx(correct ? "correct" : "wrong");
       /* the server owns the record: it re-computes `correct` from the
@@ -338,6 +347,18 @@ export default function PracticeApp() {
     },
     [picks, q]
   );
+
+  /* ---- beat my path: the WhatsApp challenge, zero DB ---------------- */
+  function shareBeat(qq: Question) {
+    const w = wrongRef.current[qq.id] ?? 0;
+    const url = `${window.location.origin}/beat?q=${qq.id}&w=${w}`;
+    const text =
+      w === 0
+        ? `I cleared this Past Graph path without a single wrong pick. Think you can match it? ${url}`
+        : `I cleared this Past Graph path with ${w} wrong pick${w === 1 ? "" : "s"}. Think you can beat me? ${url}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+    sfx("tick");
+  }
 
   /* ---- reels: the scroll-snap full-screen player ------------------- */
 
@@ -895,7 +916,18 @@ export default function PracticeApp() {
                       </div>
                     )}
                     {Boolean(picks[qq.id]) && i === idx && (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 w-full max-w-lg">
+                      <>
+                        <button
+                          className="card-flat p-3.5 text-left w-full max-w-lg hover:-translate-y-0.5 transition-transform"
+                          onClick={() => shareBeat(qq)}
+                        >
+                          <span className="block text-[13px] font-semibold">⚡ Beat my path</span>
+                          <span className="block text-[11.5px] muted mt-0.5">
+                            Send this question to a friend on WhatsApp — they replay it and try to beat your{" "}
+                            {wrongRef.current[qq.id] ?? 0} wrong pick{(wrongRef.current[qq.id] ?? 0) === 1 ? "" : "s"}.
+                          </span>
+                        </button>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 w-full max-w-lg">
                         {recs.videos.slice(0, 1).map((v) => (
                           <button
                             key={v.id}
@@ -926,7 +958,8 @@ export default function PracticeApp() {
                             <span className="block text-[11px] muted mt-0.5">{a.read_min} min read</span>
                           </button>
                         ))}
-                      </div>
+                        </div>
+                      </>
                     )}
                   </>
                 )}

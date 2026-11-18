@@ -3,6 +3,7 @@
 import type { Question } from "@/lib/types";
 import MathText from "./MathText";
 import StepScene from "./StepScene";
+import BlankView from "./BlankView";
 
 export default function QuestionView({
   q,
@@ -26,6 +27,7 @@ export default function QuestionView({
   const steps = q.kind === "multi" && q.steps && q.steps.length > 1 ? q.steps : null;
   const isMulti = steps !== null;
   const holding = isMulti && !constructed;
+  const isBlanks = q.kind === "blanks";
 
   return (
     <div className={`slip ${compact ? "p-4 pl-7 sm:p-5 sm:pl-8" : "p-5 pl-8 sm:p-7 sm:pl-9"}`}>
@@ -36,12 +38,16 @@ export default function QuestionView({
           {q.year} · Q{String(q.qnum).padStart(2, "0")}
         </span>
         {isMulti && <span className="chip chip-zest !text-[11px] !py-1">Constructive</span>}
+        {isBlanks && <span className="chip chip-soft !text-[11px] !py-1">Fill-in</span>}
         {q.difficulty >= 3 && <span className="chip chip-soft !text-[11px] !py-1">Hard</span>}
       </div>
 
-      <p className={`leading-relaxed qtext mt-3.5 ${compact ? "text-[15px]" : "text-[17px]"}`}>
-        <MathText text={q.stem} />
-      </p>
+      {/* blanks render their own stem (the slots live inside it) */}
+      {isBlanks ? null : (
+        <p className={`leading-relaxed qtext mt-3.5 ${compact ? "text-[15px]" : "text-[17px]"}`}>
+          <MathText text={q.stem} />
+        </p>
+      )}
 
       {steps && (
         <div className="mt-4">
@@ -50,7 +56,9 @@ export default function QuestionView({
       )}
 
       {/* the choices only exist once the picture is built */}
-      {holding ? (
+      {isBlanks ? (
+        <BlankView q={q} answered={answered} picked={picked} onPick={onPick} />
+      ) : holding ? (
         <div className="mt-4 rounded-2xl p-3.5 text-center" style={{ border: "1.5px dashed rgba(32,26,17,0.35)", background: "var(--paper-2)" }}>
           <p className="mono text-[11px] tracking-[0.12em]" style={{ color: "var(--muted)" }}>CONSTRUCT TO UNLOCK</p>
           <p className="text-[13px] muted mt-1">The choices appear the moment the construction is complete.</p>
@@ -93,7 +101,11 @@ export default function QuestionView({
             EXAMINER&apos;S NOTE
           </p>
           <p className="text-[14px] font-semibold">
-            {picked === q.answer ? "Correct — and here is why." : `Answer: ${q.answer}`}
+            {picked === q.answer
+              ? "Correct — and here is why."
+              : isBlanks
+                ? `Answer: ${q.answer.split(",").map((l) => q.options.find((o) => o.label === l.trim())?.text ?? l.trim()).join(", ")}`
+                : `Answer: ${q.answer}`}
           </p>
           <p className="text-[14px] leading-relaxed qtext mt-1"><MathText text={q.explanation} /></p>
         </div>

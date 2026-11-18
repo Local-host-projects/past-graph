@@ -865,6 +865,94 @@ button.chip, a.chip { cursor: pointer; }
 .quiz-act.q-later { opacity: 0.75; font-weight: 500; }
 
 /* ------------------------------------------------------------------ */
+/* The return thread: a visible elastic tie between the moment a quiz  */
+/* sent the viewer back and the moment they left. When the returned-to */
+/* section plays through, the thread pulls them straight home.         */
+/* ------------------------------------------------------------------ */
+.return-thread {
+  position: absolute; left: 0; right: 0; bottom: 12px; height: 46px;
+  z-index: 3; pointer-events: none; overflow: visible;
+}
+.return-thread path {
+  fill: none;
+  stroke: var(--zest, #e8722a);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 7 5;
+  opacity: 0.95;
+  transform-origin: 50% 100%;
+  animation: threadWobble 2.3s ease-in-out infinite;
+}
+@keyframes threadWobble {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.8); }
+}
+@media (prefers-reduced-motion: reduce) { .return-thread path { animation: none; } }
+.thread-dot {
+  position: absolute; bottom: 16px; z-index: 3;
+  width: 10px; height: 10px; margin-left: -5px;
+  border-radius: 99px; background: var(--zest, #e8722a);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(32, 26, 17, 0.4);
+}
+.thread-pill {
+  position: absolute; left: 10px; right: 10px; bottom: 66px; z-index: 3;
+  display: flex; align-items: center; gap: 9px;
+  padding: 7px 8px 7px 12px; border-radius: 13px;
+  background: rgba(28, 22, 15, 0.86); color: #fff7ed;
+  font-size: 12.5px; font-weight: 500;
+  border: 1.5px solid rgba(255, 247, 237, 0.35);
+  box-shadow: 3px 4px 0 rgba(32, 26, 17, 0.3);
+  backdrop-filter: blur(5px);
+  animation: rise 0.3s ease both;
+}
+.thread-pill strong { font-weight: 700; }
+.thread-pill .x {
+  background: none; border: none; color: inherit; font-size: 13px;
+  cursor: pointer; padding: 3px 7px; border-radius: 8px; opacity: 0.8;
+}
+.thread-pill .x:hover { opacity: 1; background: rgba(255, 255, 255, 0.14); }
+.thread-knot { font-size: 14px; color: #ffb26b; flex: none; }
+
+/* ------------------------------------------------------------------ */
+/* Annotation blanks: the token-tray question kind. Tap a token, then  */
+/* tap its slot; drag works on desktop as the garnish.                 */
+/* ------------------------------------------------------------------ */
+.blank-tray {
+  border: 1.5px dashed rgba(32, 26, 17, 0.35);
+  border-radius: 14px;
+  background: var(--paper-2, #f5f0e4);
+  padding: 10px 12px;
+}
+.blank-tokens { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 7px; }
+.blank-token {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 6px 11px; border-radius: 99px;
+  border: 1.5px solid rgba(32, 26, 17, 0.3); background: #fff;
+  font: inherit; font-size: 13px; font-weight: 600; color: var(--ink, #1c1c1e);
+  cursor: pointer; transition: transform 0.12s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.blank-token:hover:not(:disabled) { border-color: var(--zest); }
+.blank-token.armed { border-color: var(--zest); background: #fff3e6; transform: translateY(-1px); }
+.blank-token[data-used="1"] { opacity: 0.35; cursor: default; text-decoration: line-through; }
+.blank-slot {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 58px; min-height: 30px; padding: 3px 10px; margin: 0 3px;
+  border-radius: 9px; vertical-align: -7px;
+  border: 1.5px dashed rgba(32, 26, 17, 0.4);
+  background: rgba(255, 255, 255, 0.7);
+  font: inherit; font-size: 14px; font-weight: 700; color: var(--ink, #1c1c1e);
+  cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+.blank-slot:hover { border-color: var(--zest); }
+.blank-slot.armed-target { border-color: var(--zest); background: #fff3e6; }
+.blank-slot.filled { border-style: solid; border-color: rgba(32, 26, 17, 0.55); background: #fff; }
+.blank-slot-static { cursor: default; min-width: 40px; padding: 2px 9px; }
+.blank-slot-static[data-ok="1"] { border: 1.5px solid #1b7f3b; background: #e9f7ee; color: #14602c; }
+.blank-slot-static[data-ok="0"][data-got="1"] { border: 1.5px solid #c62828; background: #fdecea; color: #9c1c1c; }
+
+/* ------------------------------------------------------------------ */
 /* Mock: the bottom panel — subject blocks, live n/30 + /400 total.    */
 /* ------------------------------------------------------------------ */
 .mock-panel {

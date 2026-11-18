@@ -5,6 +5,7 @@
  *   1. Economics papers 2021–2025 (the subject had ZERO questions) + constructives
  *   2. Top-ups for thin subjects: physics, chemistry, biology, mathematics
  *   3. 22 articles (12 premium-shelf + 10 free) and 3 new sims rows
+ *   4. 14 annotation blanks (kind: "blanks" — token-tray fill-ins)
  *
  * Duplicate-stem guard: questions whose exact stem already exists are
  * skipped, so reruns are safe. Articles/sims upsert on slug.
@@ -21,6 +22,7 @@ import { singles as bioSingles } from "./content-data/bio.mjs";
 import { singles as mathSingles } from "./content-data/math.mjs";
 import { premiumArticles } from "./content-data/articles-premium.mjs";
 import { freeArticles, newSims } from "./content-data/articles-free.mjs";
+import { blanksQs } from "./content-data/blanks.mjs";
 
 const env = fs.readFileSync(".env.local", "utf8");
 const envGet = (name) => {
@@ -34,12 +36,13 @@ if (!REST || !SERVICE) { console.error("missing env"); process.exit(1); }
 const H = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "content-type": "application/json" };
 
 /* ------------------------------------------------------------ helpers */
-const OPTS = (arr) => arr.map((text, i) => ({ label: "ABCD"[i], text }));
+const OPTS = (arr) => arr.map((text, i) => ({ label: String.fromCharCode(65 + i), text }));
 const uid = () => crypto.randomUUID();
 
 const addQ = (subject, year, qnum, q) => questions.push({
   subject, year, qnum, topic: q.topic, stem: q.stem, opts: q.opts, ans: q.ans,
   expl: q.expl, f: Boolean(q.f), d: q.d ?? 2, steps: q.steps ?? null,
+  kind: q.kind === "blanks" ? "blanks" : q.steps ? "multi" : "single",
 });
 const questions = [];
 
@@ -65,6 +68,10 @@ bank("physics", physMultis);
 bank("chemistry", chemSingles);
 bank("biology", bioSingles);
 bank("mathematics", mathSingles);
+
+/* annotation blanks: token-tray fill-ins across the syllabus — each carries
+   its own subject; they ride nextYear() like the other banks */
+blanksQs.forEach((q) => addQ(q.subject, nextYear(q.subject), null, q));
 
 const articleRows = [...premiumArticles, ...freeArticles];
 
@@ -137,7 +144,7 @@ const qRows = plan.map((q) => ({
   options: OPTS(q.opts),
   answer: q.ans,
   explanation: q.expl,
-  kind: q.steps ? "multi" : "single",
+  kind: q.kind,
   steps: q.steps,
   difficulty: q.d,
   /* is_free is a generated column — the DB derives it from year >= 2021 */
@@ -153,6 +160,12 @@ for (let i = 0; i < qRows.length; i += 100) {
   if (r.ok) ok += chunk.length; else { fail += chunk.length; console.error(`questions batch @${i}:`, r.status, (await r.text()).slice(0, 300)); }
 }
 console.log(`questions inserted: ${ok} (failed: ${fail})`);
+if (fail && plan.some((q) => q.kind === "blanks")) {
+  console.log("");
+  console.log("⚠ some question inserts failed — if the error mentions questions_kind_check,");
+  console.log("  run supabase/upgrade.sql in the Supabase SQL editor (it widens the kind");
+  console.log("  check to allow 'blanks'), then rerun: node scripts/expand-content.mjs --go");
+}
 
 const artRows = newArticles.map((a) => ({
   slug: a.slug, subject_slug: a.subject, topic_slug: a.topic,

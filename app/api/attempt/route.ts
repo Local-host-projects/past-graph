@@ -54,20 +54,33 @@ export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as { question_id?: string; picked?: string };
     questionId = String(body?.question_id ?? "").trim();
-    picked = String(body?.picked ?? "").trim().toUpperCase().slice(0, 1);
+    picked = String(body?.picked ?? "").trim().toUpperCase();
   } catch {
     return NextResponse.json({ ok: false, reason: "bad-body" });
   }
-  if (!questionId || !/^[A-D]$/.test(picked)) return NextResponse.json({ ok: false, reason: "bad-body" });
+  if (!questionId) return NextResponse.json({ ok: false, reason: "bad-body" });
 
   const { data: q } = await sb
     .from("questions")
-    .select("answer")
+    .select("answer,kind")
     .eq("id", questionId)
     .maybeSingle();
   if (!q?.answer) return NextResponse.json({ ok: false, reason: "no-question" });
 
-  const correct = String(q.answer).trim().toUpperCase() === picked;
+  /* kind-aware grading: single/multi take one letter A–D; annotation blanks
+     take a comma-joined token arrangement ("B,A,D,C") compared in order. */
+  let correct: boolean;
+  if (q.kind === "blanks") {
+    const arrangement = picked.split(",").map((s) => s.trim()).filter(Boolean);
+    if (!arrangement.length || arrangement.length > 12 || arrangement.some((s) => !/^[A-Z]$/.test(s))) {
+      return NextResponse.json({ ok: false, reason: "bad-body" });
+    }
+    picked = arrangement.join(",");
+    correct = picked === String(q.answer).trim().toUpperCase().replace(/\s/g, "");
+  } else {
+    if (!/^[A-D]$/.test(picked)) return NextResponse.json({ ok: false, reason: "bad-body" });
+    correct = String(q.answer).trim().toUpperCase() === picked;
+  }
   const { error } = await sb
     .from("attempts")
     .insert({ user_id: auth.user.id, question_id: questionId, picked, correct });

@@ -47,7 +47,7 @@ function asQuestion(it: FeedItem): Question | null {
     options: it.options,
     answer: it.answer,
     explanation: it.explanation ?? "",
-    kind: it.kind === "multi" ? "multi" : "single",
+    kind: it.kind === "blanks" ? "blanks" : it.kind === "multi" ? "multi" : "single",
     steps: (it.steps as Step[] | null) ?? null,
     difficulty: it.difficulty ?? 2,
     is_free: it.is_free !== false,

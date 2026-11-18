@@ -1,0 +1,703 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R 26 0 R 28 0 R 30 0 R] /Count 13 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 810 >>
+stream
+BT 0.55 0.35 0.1 rg
+/Helvetica-Bold 13 Tf 1 0 0 1 62.00 671.89 Tm (PAST GRAPH) Tj ET
+BT /Helvetica-Bold 30 Tf 1 0 0 1 62.00 637.89 Tm (Research: the later features) Tj ET
+BT /Helvetica 12.5 Tf 1 0 0 1 62.00 597.89 Tm (Fog-of-war syllabus map, pull-a-step, lift-out, authoring,) Tj ET
+BT /Helvetica 12.5 Tf 1 0 0 1 62.00 578.89 Tm (creator program, groups and ranks, learn spaces.) Tj ET
+BT 0.4 0.35 0.28 rg
+/Helvetica-Oblique 10 Tf 1 0 0 1 62.00 518.89 Tm (Committed Mon Nov 16 2026 -- internal design document.) Tj ET
+BT 0.4 0.35 0.28 rg
+/Helvetica-Oblique 10 Tf 1 0 0 1 62.00 504.89 Tm (Everything here is buildable on the current stack \(Next.js + Supabase\) with) Tj ET
+BT 0.4 0.35 0.28 rg
+/Helvetica-Oblique 10 Tf 1 0 0 1 62.00 490.89 Tm (no new infrastructure beyond what sections name explicitly.) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 1589 >>
+stream
+BT /Helvetica-Bold 17 Tf 1 0 0 1 62.00 767.89 Tm (Contents) Tj ET
+0.2 0.12 0.05 RG 1.1 w 62 752.89 m 533.28 752.89 l S
+BT /Helvetica-Bold 11 Tf 1 0 0 1 62.00 730.89 Tm (1. Where Past Graph stands) Tj ET
+BT /Helvetica 11 Tf 1 0 0 1 513.28 730.89 Tm (-) Tj ET
+BT /Helvetica-Bold 11 Tf 1 0 0 1 62.00 710.89 Tm (2. The fog-of-war syllabus map) Tj ET
+BT /Helvetica 11 Tf 1 0 0 1 513.28 710.89 Tm (-) Tj ET
+BT /Helvetica-Bold 11 Tf 1 0 0 1 62.00 690.89 Tm (3. Pull-a-step) Tj ET
+BT /Helvetica 11 Tf 1 0 0 1 513.28 690.89 Tm (-) Tj ET
+BT /Helvetica-Bold 11 Tf 1 0 0 1 62.00 670.89 Tm (4. Lift-out) Tj ET
+BT /Helvetica 11 Tf 1 0 0 1 513.28 670.89 Tm (-) Tj ET
+BT /Helvetica-Bold 11 Tf 1 0 0 1 62.00 650.89 Tm (5. Authoring studio) Tj ET
+BT /Helvetica 11 Tf 1 0 0 1 513.28 650.89 Tm (-) Tj ET
+BT /Helvetica-Bold 11 Tf 1 0 0 1 62.00 630.89 Tm (6. Creator program) Tj ET
+BT /Helvetica 11 Tf 1 0 0 1 513.28 630.89 Tm (-) Tj ET
+BT /Helvetica-Bold 11 Tf 1 0 0 1 62.00 610.89 Tm (7. Groups and ranks) Tj ET
+BT /Helvetica 11 Tf 1 0 0 1 513.28 610.89 Tm (-) Tj ET
+BT /Helvetica-Bold 11 Tf 1 0 0 1 62.00 590.89 Tm (8. Learn spaces) Tj ET
+BT /Helvetica 11 Tf 1 0 0 1 513.28 590.89 Tm (-) Tj ET
+BT /Helvetica-Bold 11 Tf 1 0 0 1 62.00 570.89 Tm (9. Cross-cutting decisions) Tj ET
+BT /Helvetica 11 Tf 1 0 0 1 513.28 570.89 Tm (-) Tj ET
+BT /Helvetica-Bold 11 Tf 1 0 0 1 62.00 550.89 Tm (10. Decision log) Tj ET
+BT /Helvetica 11 Tf 1 0 0 1 513.28 550.89 Tm (-) Tj ET
+BT /Helvetica 8.5 Tf 1 0 0 1 62 40 Tm (Past Graph -- research: later features) Tj ET
+BT /Helvetica-Bold 8.5 Tf 1 0 0 1 471.28 40 Tm (page 2) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 4959 >>
+stream
+BT 0.45 0.4 0.33 rg
+/Helvetica-Oblique 9 Tf 1 0 0 1 62.00 767.89 Tm (the platform this research builds on) Tj ET
+BT /Helvetica-Bold 17 Tf 1 0 0 1 62.00 753.89 Tm (Where Past Graph stands) Tj ET
+0.2 0.12 0.05 RG 1.1 w 62 738.89 m 533.28 738.89 l S
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 716.89 Tm (Past Graph is a JAMB/UTME study app: the full past-question archive rendered as a feed) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 701.89 Tm (and a paper hall, watch-and-learn videos with annotation overlays \(notes, simulations,) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 686.89 Tm (articles\), retrieval quizzes that tie a return thread through the video, a Pathfinder) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 671.89 Tm (that ranks what to study next, and six-month premium for N750 paid through Paystack or) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 656.89 Tm (Flutterwave.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 636.89 Tm (Current inventory: 4,142 past questions \(871 free, 2021-2025 by the GENERATED is_free) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 621.89 Tm (rule\), 31 articles, 51 videos carrying 169 annotations, 3 interactive simulations,) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 606.89 Tm (economics papers 2021-2025, constructives with step scenes, and a new blanks kind) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 591.89 Tm (\(token-tray fill-ins\). The stack: Next.js App Router, Supabase \(Postgres + auth + REST\),) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 576.89 Tm (PWA shell, zero external dependencies on the client side beyond YouTube and payment) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 561.89 Tm (embeds.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 541.89 Tm (This document researches the deferred features -- the ones deliberately left out of the) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 526.89 Tm (launch batch -- in enough depth that each can be built without re-deriving its design.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 511.89 Tm (For every feature: what it is, why it earns its place, the interaction design, the) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 496.89 Tm (architecture, the data model, the risks, and the build order.) Tj ET
+0.75 0.68 0.6 RG 0.6 w 62 468.89 m 533.28 468.89 l S
+BT 0.45 0.4 0.33 rg
+/Helvetica-Oblique 9 Tf 1 0 0 1 62.00 442.89 Tm (progress as visible territory) Tj ET
+BT /Helvetica-Bold 17 Tf 1 0 0 1 62.00 428.89 Tm (The fog-of-war syllabus map) Tj ET
+0.2 0.12 0.05 RG 1.1 w 62 413.89 m 533.28 413.89 l S
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 380.89 Tm (The idea) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 358.89 Tm (The whole JAMB syllabus becomes one explorable territory, strategy-game style. Every) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 343.89 Tm (topic is a region; untouched regions sit under fog; mastery is literally clearing the) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 328.89 Tm (map. A student opens the map and sees not a list, but a landscape: where they have been,) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 313.89 Tm (where they are avoiding, and what the path to their target course crosses next.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 282.89 Tm (Fog states -- all computed from attempts we already collect) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 260.89 Tm (Fogged -- zero attempts in the topic. The topic's name is readable on the tile's border;) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 260.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 245.89 Tm (nothing inside is visible.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 227.89 Tm (Lifting -- attempts exist; fog opacity thins as coverage \(share of the topic's questions) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 227.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 212.89 Tm (attempted\) and accuracy rise.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 194.89 Tm (Clear -- roughly 80% coverage at 80% accuracy, recency-weighted. Fully lit and) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 194.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 179.89 Tm (permanently navigable.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 161.89 Tm (Creep -- fog partially returns after months of neglect. Spaced-repetition pressure, tuned) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 161.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 146.89 Tm (to nudge revision without punishing.) Tj ET
+BT 0.4 0.35 0.28 rg
+/Helvetica-Oblique 9.5 Tf 1 0 0 1 62.00 128.89 Tm (The creep contract: fog never fully refogs a cleared region. It returns asymptotically toward 40%) Tj ET
+BT 0.4 0.35 0.28 rg
+/Helvetica-Oblique 9.5 Tf 1 0 0 1 62.00 115.89 Tm (opacity at most, and a single review session pushes it back. Framing matters: creep is revision) Tj ET
+BT 0.4 0.35 0.28 rg
+/Helvetica-Oblique 9.5 Tf 1 0 0 1 62.00 102.89 Tm (pressure, not punishment.) Tj ET
+BT /Helvetica 8.5 Tf 1 0 0 1 62 40 Tm (Past Graph -- research: later features) Tj ET
+BT /Helvetica-Bold 8.5 Tf 1 0 0 1 471.28 40 Tm (page 3) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 5116 >>
+stream
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 770.89 Tm (The zoom ladder) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 748.89 Tm (Three levels for v1. \(1\) The full map: every subject continent on one screen. \(2\) A) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 733.89 Tm (subject view: that subject's topics clustered by how real papers group them. \(3\) A topic) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 718.89 Tm (sheet: the topic's questions, its articles and sims, and a 'practise this topic' action.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 703.89 Tm (Tap to drill in; pinch or scroll to climb out. Desktop gets wheel-zoom; mobile gets) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 688.89 Tm (pinch; both share one transform model.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 657.89 Tm (The pathfinder draws the route) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 635.89 Tm (Pick a target course \(Medicine needs English, Biology, Chemistry, Physics\) and the map) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 620.89 Tm (highlights the regions that combo needs and marks the next uncleared tile on the route.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 605.89 Tm ('What do I study today?' is answered spatially, every day, from the student's own data --) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 590.89 Tm (no motivational copy required.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 559.89 Tm (Architecture) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 537.89 Tm (Data: one aggregate query per user -- attempts joined to questions grouped by topic_slug,) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 537.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 522.89 Tm (producing per-topic attempt count, distinct questions covered, correct count, and) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 507.89 Tm (last-seen. No separate progress table in v1; attempts are the truth.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 489.89 Tm (Layout: a static JSON generated offline by a script. Topics are clustered by) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 489.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 474.89 Tm (co-occurrence in real papers \(topics that appear in the same subject-year papers sit near) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 459.89 Tm (each other\); positions are laid out with a deterministic seeded pass so the map never) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 444.89 Tm (reshuffles.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 426.89 Tm (Rendering: a single <canvas> with a pan/zoom transform. Hit-testing is nearest-tile) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 426.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 411.89 Tm (distance, not DOM. Fog states are computed once per session load and cached; the map) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 396.89 Tm (redraws on interaction but never re-queries.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 378.89 Tm (API: GET /api/map returns {topics:[{slug, subject, coverage, accuracy, last_seen,) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 378.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 363.89 Tm (n_questions}], layout_version}. ~40 rows per user -- trivially cacheable.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 334.89 Tm (Edge cases and honest caveats) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 312.89 Tm (It is only as good as the topic labels. Every one of the 4,142 questions needs a clean) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 312.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 297.89 Tm (topic_slug; step one is a coverage audit, otherwise we get patches of broken permanent) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 282.89 Tm (fog. \(The topics table exists; the audit is a script + an afternoon of label fixes.\)) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 264.89 Tm (Right after launch it is mostly fog -- which is correct. Fog needs fog to lift; the map) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 264.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 249.89 Tm (improves as students generate attempts. The empty state must feel like possibility, not) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 234.89 Tm (emptiness: fogged tiles show the topic NAME and question count, so the map is informative) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 219.89 Tm (even before the first attempt.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 201.89 Tm (Thin topics \(few questions\) make coverage unstable -- 1 of 2 questions attempted reads as) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 201.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 186.89 Tm (50%. Mark those tiles 'survey' tiles that clear on any attempt.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 168.89 Tm (A cheap Android is the target device: one canvas, cached layout, render-once, no) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 168.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 153.89 Tm (blur/shadow on fog -- fog opacity is a single fill, not a filter.) Tj ET
+BT /Helvetica 8.5 Tf 1 0 0 1 62 40 Tm (Past Graph -- research: later features) Tj ET
+BT /Helvetica-Bold 8.5 Tf 1 0 0 1 471.28 40 Tm (page 4) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 4395 >>
+stream
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 770.89 Tm (Build order) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 748.89 Tm (1\) Topic audit script \(coverage + label fixes\). 2\) Layout generator script writing) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 733.89 Tm (map-layout.json. 3\) Aggregate endpoint + fog math. 4\) Canvas map with three zoom levels.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 718.89 Tm (5\) Pathfinder route overlay. 6\) Creep tuning \(last\). Estimate: 2-3 weeks of focused work.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 703.89 Tm (Fog map is the flagship differentiator and pairs perfectly with the existing Pathfinder.) Tj ET
+0.75 0.68 0.6 RG 0.6 w 62 675.89 m 533.28 675.89 l S
+BT 0.45 0.4 0.33 rg
+/Helvetica-Oblique 9 Tf 1 0 0 1 62.00 649.89 Tm (the hint economy for constructives) Tj ET
+BT /Helvetica-Bold 17 Tf 1 0 0 1 62.00 635.89 Tm (Pull-a-step) Tj ET
+0.2 0.12 0.05 RG 1.1 w 62 620.89 m 533.28 620.89 l S
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 587.89 Tm (The idea) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 565.89 Tm (Inside any multi-step constructive, a hold-to-pull affordance reveals the previous step) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 550.89 Tm (fully worked -- the actual mathematics or scene, not just its title -- then folds away.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 535.89 Tm (It is the middle ground between 'locked until you build it' and 'here is the answer',) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 520.89 Tm (preserving productive struggle while preventing rage-quit.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 489.89 Tm (Interaction) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 467.89 Tm (A small button on the step bar: 'pull a step'. Hold to confirm \(600 ms\) -- deliberate,) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 467.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 452.89 Tm (not accidental. The previous step's full work appears inline above the current one,) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 437.89 Tm (tinted as borrowed.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 419.89 Tm (Pulls are bounded: you cannot pull past step 1, and each pull counts. After two pulls the) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 419.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 404.89 Tm (question is marked assisted -- the attempt still records, but stats surface it honestly) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 389.89 Tm (\('solved with 2 pulls'\).) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 371.89 Tm (Beat-my-path is unaffected: wrong picks still count; pulls are not wrong picks.) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 371.89 Tm (*) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 342.89 Tm (Data model) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 320.89 Tm (attempts.pulled integer default 0 \(how many pulls this attempt used\).) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 320.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 302.89 Tm (events row kind='step_pulled' {question_id, step} -- feeds the aggregate 'which steps) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 302.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 287.89 Tm (students lean on' view, which becomes authoring signal \(a step everyone pulls is a step) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 272.89 Tm (written badly\).) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 243.89 Tm (Risks) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 221.89 Tm (Farming pulls to trivialize construction: bounded above \(steps-1\) and surfaced in stats) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 221.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 206.89 Tm (-- the dishonesty cost is visible to the student themselves.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 188.89 Tm (Scope creep into full hint trees: cut. One pull depth only in v1.) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 188.89 Tm (*) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 159.89 Tm (Build order) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 137.89 Tm (Column + events write + UI hold-button + stats surfacing. Estimate: 3-4 days. This is the) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 122.89 Tm (highest value-per-hour item on this list.) Tj ET
+0.75 0.68 0.6 RG 0.6 w 62 94.89 m 533.28 94.89 l S
+BT /Helvetica 8.5 Tf 1 0 0 1 62 40 Tm (Past Graph -- research: later features) Tj ET
+BT /Helvetica-Bold 8.5 Tf 1 0 0 1 471.28 40 Tm (page 5) Tj ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Length 4186 >>
+stream
+BT 0.45 0.4 0.33 rg
+/Helvetica-Oblique 9 Tf 1 0 0 1 62.00 767.89 Tm (portable question objects) Tj ET
+BT /Helvetica-Bold 17 Tf 1 0 0 1 62.00 753.89 Tm (Lift-out) Tj ET
+0.2 0.12 0.05 RG 1.1 w 62 738.89 m 533.28 738.89 l S
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 705.89 Tm (The idea) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 683.89 Tm (Any question can be lifted out of its paper into a personal tray -- a portable object) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 668.89 Tm (carrying its explanation, steps, and media links. Lifted questions power revision lists) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 653.89 Tm (\('my 12 hardest optics questions'\), printable sheets, and sharing.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 622.89 Tm (Interaction) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 600.89 Tm (A 'lift out' action in the answered state and on any question sheet. The tray lives in) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 600.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 585.89 Tm (Practice as a tab: lifted questions, grouped by topic, with remove and clear.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 567.89 Tm (Share a lifted collection as a link -- the link re-gates premium: opening a shared tray) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 567.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 552.89 Tm (shows free questions fully and archived ones as the barcode card. Lifting never leaks) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 537.89 Tm (content.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 519.89 Tm (Printable sheet \(v2\): the tray renders as a clean exam-style paper with an answer key on) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 519.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 504.89 Tm (the last page. PDF generation reuses the hand-rolled writer from this document.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 475.89 Tm (Data model) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 453.89 Tm (The saved_items table already exists \(user_id, item_type, item_id, created_at\) --) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 438.89 Tm (lift-out is a productization of it: UI, tray view, share link with an id list \(zero new) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 423.89 Tm (tables\). A shared tray link is /tray?ids=... exactly like beat-my-path encodes itself in) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 408.89 Tm (its URL.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 377.89 Tm (Risks) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 355.89 Tm (Tray bloat: cap at 200 lifted items with a friendly 'the tray is full -- lift what you) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 355.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 340.89 Tm (will actually re-open'.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 322.89 Tm (Sharing leaks: solved above by re-gating at read time; the share link never embeds answer) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 322.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 307.89 Tm (data for premium questions beyond what the free tier exposes.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 278.89 Tm (Build order) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 256.89 Tm (Tray UI + lift actions + share link. Estimate: 4-6 days.) Tj ET
+0.75 0.68 0.6 RG 0.6 w 62 228.89 m 533.28 228.89 l S
+BT 0.45 0.4 0.33 rg
+/Helvetica-Oblique 9 Tf 1 0 0 1 62.00 202.89 Tm (internal-first, invited authors later) Tj ET
+BT /Helvetica-Bold 17 Tf 1 0 0 1 62.00 188.89 Tm (Authoring studio) Tj ET
+0.2 0.12 0.05 RG 1.1 w 62 173.89 m 533.28 173.89 l S
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 140.89 Tm (The idea) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 118.89 Tm (An internal-first authoring surface for the expensive content kinds: constructives \(step) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 103.89 Tm (scenes\), blanks \(slot grammar\), and sim-linked questions. Later it opens to invited) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 88.89 Tm (authors under the creator program \(section 5\). The studio's job is to make a 90-minute) Tj ET
+BT /Helvetica 8.5 Tf 1 0 0 1 62 40 Tm (Past Graph -- research: later features) Tj ET
+BT /Helvetica-Bold 8.5 Tf 1 0 0 1 471.28 40 Tm (page 6) Tj ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 16 0 R >>
+endobj
+18 0 obj
+<< /Length 4512 >>
+stream
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 781.89 Tm (constructive take 30 minutes, with validation so nothing malformed reaches the table.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 750.89 Tm (The slot grammar \(blanks\)) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 728.89 Tm (Stem slots are written ___1___, ___2___, ... -- the validator lints: slot numbers) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 728.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 713.89 Tm (sequential from 1, at least two slots, every slot referenced at most once, word bank) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 698.89 Tm (non-empty, answer a permutation of distinct bank labels with no repeats, and length) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 683.89 Tm (limits on tokens.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 665.89 Tm (The answer is stored as comma-joined labels \('B,A,D,C'\) in slot order; grading is) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 665.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 650.89 Tm (kind-aware in /api/attempt and compares arrangement, not letters.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 632.89 Tm (Distractors beyond the slot count are encouraged -- single-use tokens make the bank a) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 632.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 617.89 Tm (real arrangement task.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 588.89 Tm (Constructive authoring) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 566.89 Tm (Steps are typed blocks: text, math \(rendered by MathText\), scene \(JSON scenes rendered by) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 566.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 551.89 Tm (StepScene\). The scene schema is FROZEN for authors: a fixed palette of primitives the) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 536.89 Tm (renderer knows; new primitives are a code change, not author freedom.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 518.89 Tm (Templates cut cost: each subject gets 3-4 constructive skeletons \(e.g. 'derive the) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 518.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 503.89 Tm (expression', 'complete the circuit calculation', 'interpret the graph'\) with pre-set step) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 488.89 Tm (kinds.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 459.89 Tm (Pipeline) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 437.89 Tm (questions.status: draft -> review -> live \(column added; all existing rows backfilled) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 437.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 422.89 Tm ('live'\). The practice surfaces only live; the studio sees everything.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 404.89 Tm (Validation runs on save AND on publish \(defense in depth\): stem constraints, option) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 404.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 389.89 Tm (counts, answer-label existence, qnum uniqueness per subject-year, topic_slug existence.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 360.89 Tm (Risks) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 338.89 Tm (Authoring cost per constructive is real \(30-90 minutes\). Templates + reuse of scene) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 338.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 323.89 Tm (primitives are the mitigation; the creator program pays for scale.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 305.89 Tm (Malformed content reaching production: validators + a preview pane that renders the exact) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 305.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 290.89 Tm (student view before publish.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 261.89 Tm (Build order) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 239.89 Tm (Status column + validators + forms \(constructive, blanks\) + preview. Estimate: 1-2 weeks) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 224.89 Tm (internal-only. The invite-author layer waits for the creator program.) Tj ET
+0.75 0.68 0.6 RG 0.6 w 62 196.89 m 533.28 196.89 l S
+BT 0.45 0.4 0.33 rg
+/Helvetica-Oblique 9 Tf 1 0 0 1 62.00 170.89 Tm (content at scale, rev-share) Tj ET
+BT /Helvetica-Bold 17 Tf 1 0 0 1 62.00 156.89 Tm (Creator program) Tj ET
+0.2 0.12 0.05 RG 1.1 w 62 141.89 m 533.28 141.89 l S
+BT /Helvetica 8.5 Tf 1 0 0 1 62 40 Tm (Past Graph -- research: later features) Tj ET
+BT /Helvetica-Bold 8.5 Tf 1 0 0 1 471.28 40 Tm (page 7) Tj ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 18 0 R >>
+endobj
+20 0 obj
+<< /Length 4601 >>
+stream
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 770.89 Tm (The idea) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 748.89 Tm (Vetted teachers and top students author questions, articles, and annotations for revenue) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 733.89 Tm (share: N per accepted question, plus a per-1k-attempts bonus in the first months. The) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 718.89 Tm (program is how the archive grows past what we author ourselves -- and how the fog map) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 703.89 Tm (never runs out of territory to clear.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 672.89 Tm (Mechanics) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 650.89 Tm (Application -> vetting \(sample question set + a call\) -> program profile \(payout bank) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 650.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 635.89 Tm (details, subject list\) -> authoring via the studio with status='review'.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 617.89 Tm (Acceptance bar: 2 of 3 reviewers approve, with a written rejection reason. Rejections) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 617.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 602.89 Tm (feed the author's next draft -- the loop is the training.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 584.89 Tm (Payout ledger: creator_payouts \(creator_id, period, accepted_count, attempts_bonus,) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 584.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 569.89 Tm (amount, status\). Monthly cycle, manual review at first \(the claims pattern again\),) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 554.89 Tm (automated later.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 525.89 Tm (Legal and operations) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 503.89 Tm (Originality oath + plagiarism screening \(existing-stem fuzzy match at submit time:) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 503.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 488.89 Tm (trigram similarity against the archive\).) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 470.89 Tm (Takedown policy published; payout withheld on any accepted-then-retracted plagiarism) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 470.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 455.89 Tm (case.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 437.89 Tm (Start narrow: 10 creators, 2 subjects, fixed monthly budget. Scale only when acceptance) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 437.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 422.89 Tm (quality stabilizes above 70%.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 393.89 Tm (Risks) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 371.89 Tm (Quality variance -- the acceptance bar and reviewer pool absorb it.) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 371.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 353.89 Tm (Payout ops -- start manual, like claims review; automate only when volume demands it.) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 353.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 335.89 Tm (Author churn -- per-author dashboards \(acceptance rate, earnings, attempt counts\) keep) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 335.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 320.89 Tm (the loop visible.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 291.89 Tm (Build order) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 269.89 Tm (Depends on the authoring studio. Program tables + application flow + review queue +) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 254.89 Tm (payout ledger. Estimate: 2-3 weeks after the studio.) Tj ET
+0.75 0.68 0.6 RG 0.6 w 62 226.89 m 533.28 226.89 l S
+BT 0.45 0.4 0.33 rg
+/Helvetica-Oblique 9 Tf 1 0 0 1 62.00 200.89 Tm (the social floor under the learn spaces) Tj ET
+BT /Helvetica-Bold 17 Tf 1 0 0 1 62.00 186.89 Tm (Groups and ranks) Tj ET
+0.2 0.12 0.05 RG 1.1 w 62 171.89 m 533.28 171.89 l S
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 138.89 Tm (The idea) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 116.89 Tm (Small study groups \(maximum 8\) with a weekly ranked mock and a private leaderboard.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 101.89 Tm (Groups are the social floor the learn spaces stand on: the same membership, the same) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 86.89 Tm (invite mechanics, the same trust level -- rooms add the board and the recording on top.) Tj ET
+BT /Helvetica 8.5 Tf 1 0 0 1 62 40 Tm (Past Graph -- research: later features) Tj ET
+BT /Helvetica-Bold 8.5 Tf 1 0 0 1 471.28 40 Tm (page 8) Tj ET
+endstream
+endobj
+21 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 20 0 R >>
+endobj
+22 0 obj
+<< /Length 4748 >>
+stream
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 770.89 Tm (Mechanics) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 748.89 Tm (Join by 6-character invite code. No public profiles, no global leaderboard -- ranking is) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 748.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 733.89 Tm (group-scoped by design \(a school leaver in Kano should not be ranked against the entire) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 718.89 Tm (country in v1\).) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 700.89 Tm (Weekly mock: each member runs the same sampled paper \(30 questions, subject mix per JAMB) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 700.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 685.89 Tm (combo\), server-graded as usual; the group view shows total + accuracy per member, and a) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 670.89 Tm (streak line.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 652.89 Tm (Group thread: lightweight, text-only, react-only. It exists to coordinate the weekly mock) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 652.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 637.89 Tm (and drop beat-my-path links -- not to become a chat app.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 608.89 Tm (Data model) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 586.89 Tm (groups \(id, name, invite_code unique, owner_id, created_at\); group_members \(group_id,) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 586.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 571.89 Tm (user_id, joined_at, role\) -- 8-member cap enforced at insert.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 553.89 Tm (Weekly mocks reuse attempts wholesale: a mock session id groups the attempts; the) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 553.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 538.89 Tm (leaderboard is a per-session aggregate query. No new grading logic exists to build.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 509.89 Tm (Risks) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 487.89 Tm (Collusion during ranked mocks: the weekly mock samples fresh questions at runtime from) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 487.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 472.89 Tm (the whole archive \(premium-gated members get premium-weighted sampling\), so pre-shared) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 457.89 Tm (answers cannot be prepared. Server-side grading already owns correctness.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 439.89 Tm (Dead groups: groups auto-archive after 30 days without a completed mock, with a revival) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 439.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 424.89 Tm (prompt to the owner.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 395.89 Tm (Build order) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 373.89 Tm (Groups tables + invite codes + weekly mock sampler + group leaderboard view. Estimate:) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 358.89 Tm (1-2 weeks. Presence \(realtime\) arrives with learn spaces; groups deliberately ship) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 343.89 Tm (without it first.) Tj ET
+0.75 0.68 0.6 RG 0.6 w 62 315.89 m 533.28 315.89 l S
+BT 0.45 0.4 0.33 rg
+/Helvetica-Oblique 9 Tf 1 0 0 1 62.00 289.89 Tm (rooms, bubbles, pointers, and the event log) Tj ET
+BT /Helvetica-Bold 17 Tf 1 0 0 1 62.00 275.89 Tm (Learn spaces) Tj ET
+0.2 0.12 0.05 RG 1.1 w 62 260.89 m 533.28 260.89 l S
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 227.89 Tm (The idea) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 205.89 Tm (A room you enter with other people -- Figma/Notion atmosphere. A shared board fills the) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 190.89 Tm (space \(a question, a passage, a diagram, a sketch canvas, a video frame\); participants) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 175.89 Tm (sit along the edge as small avatars; conversation appears as speech bubbles above the) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 160.89 Tm (speaker's avatar; every participant has a named, Figma-style pointer. The whole session) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 145.89 Tm (is recorded as an append-only event log, and replay re-enacts the log in order like a) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 130.89 Tm (film -- with speed control and scrubbing. A study session becomes content: 'watch how) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 115.89 Tm (this group unpacked electrolysis' sits on the free/premium shelves exactly like a video) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 100.89 Tm (or article.) Tj ET
+BT /Helvetica 8.5 Tf 1 0 0 1 62 40 Tm (Past Graph -- research: later features) Tj ET
+BT /Helvetica-Bold 8.5 Tf 1 0 0 1 471.28 40 Tm (page 9) Tj ET
+endstream
+endobj
+23 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 22 0 R >>
+endobj
+24 0 obj
+<< /Length 5411 >>
+stream
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 770.89 Tm (The two primitives that make it feel alive) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 748.89 Tm (Speech bubbles -- messages render as bubbles above the speaker's avatar. The conversation) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 748.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 733.89 Tm (is spatial \(who said it, next to what is on the board\) instead of a scrolling sidebar.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 715.89 Tm (Pointers -- every participant has a named cursor they can move anywhere on the board.) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 715.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 700.89 Tm (Pointing is the core teaching gesture: circle the failing step, underline the phrase,) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 685.89 Tm (point at the resistor. The board is shared attention.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 656.89 Tm (The architectural insight: store events, not snapshots) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 634.89 Tm (Every action is an event: {t, actor, kind, payload}. Live mode is the log consumed at) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 619.89 Tm (t=now; replay is the same log consumed at t=recorded. Replay becomes nearly free, sync is) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 604.89 Tm (trivial \(append + broadcast\), and storage is tiny -- one board renderer consumes the log) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 589.89 Tm (either way.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 558.89 Tm (The one constraint that collapses the hard part: host-led) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 536.89 Tm (The leader adds and moves board objects; everyone else points and talks. Free-for-all) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 521.89 Tm (concurrent canvases are a CRDT nightmare; host-led is an ordered event log -- which is) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 506.89 Tm (exactly what replay wants anyway. Host controls: transfer host, remove member, end) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 491.89 Tm (session. This is a product decision, not a technical surrender: one voice per room is how) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 476.89 Tm (real tutorials run.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 445.89 Tm (Data model) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 423.89 Tm (rooms \(id, title, host_id, subject_slug, topic_slug, status: live/ended, started_at,) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 423.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 408.89 Tm (ended_at, linked_video_id nullable, linked_question_id nullable\).) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 390.89 Tm (room_events \(id bigserial, room_id, seq int monotonic per room, actor uuid, t_ms int) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 390.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 375.89 Tm (offset from session start, kind text, payload jsonb, created_at\) -- PRIMARY KEY \(room_id,) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 360.89 Tm (seq\).) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 342.89 Tm (room_members \(room_id, user_id, role: host/member, joined_at, left_at\) -- presence) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 342.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 327.89 Tm (history is queryable, which gives attendance and 'rooms you were in'.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 309.89 Tm (Event kinds v1: presence.join, presence.leave, pointer.move {x, y}, bubble.post {text},) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 309.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 294.89 Tm (board.add {obj}, board.move {obj_id, x, y}, board.remove {obj_id}, reveal.step {n},) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 279.89 Tm (room.title {title}.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 261.89 Tm (Board object schema: {id, type: question|passage|diagram|sketch|frame|note, src, x, y, w,) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 261.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 246.89 Tm (h, z} -- sketch is a stroke list; every other type references existing content by) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 231.89 Tm (id/slug.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 202.89 Tm (Live sync) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 180.89 Tm (Supabase Realtime: one channel per room; board events broadcast; presence via the) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 180.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 165.89 Tm (Realtime presence API \(avatars join/leave by themselves\).) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 147.89 Tm (pointer.move is coalesced client-side \(10 Hz, drop-stale\) and stored coalesced \(>= 100 ms) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 147.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 132.89 Tm (granularity\) -- it is the highest-volume event and would otherwise dominate the log.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 114.89 Tm (Writes go through a thin POST /api/rooms/[id]/events that assigns seq monotonically per) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 114.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 99.89 Tm (room \(a Postgres sequence per room, or seq = max+1 inside a transaction\).) Tj ET
+BT /Helvetica 8.5 Tf 1 0 0 1 62 40 Tm (Past Graph -- research: later features) Tj ET
+BT /Helvetica-Bold 8.5 Tf 1 0 0 1 471.28 40 Tm (page 10) Tj ET
+endstream
+endobj
+25 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 24 0 R >>
+endobj
+26 0 obj
+<< /Length 4669 >>
+stream
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 770.89 Tm (Recording and replay) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 748.89 Tm (Recording is free -- it IS the live log. Nothing extra is captured, which is why v1 rooms) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 748.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 733.89 Tm (must be recordable from day one even before the replay UI exists.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 715.89 Tm (Replay player: consumes the log by seq; scrub by event index; speeds 0.5/1/2/4; bubbles) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 715.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 700.89 Tm (pop above avatars at their t_ms, pointers glide \(interpolated between coalesced moves\),) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 685.89 Tm (board objects appear when they appeared.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 667.89 Tm (Replays become shelf content: status='ended' rooms with >N events get a replay card) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 667.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 652.89 Tm (\(duration, subject, topic\); free/premium gating follows the same is_free GENERATED) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 637.89 Tm (pattern -- replays from sessions on free content are free.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 608.89 Tm (Moderation and safety) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 586.89 Tm (No DMs. Bubbles are board-scoped and logged BY DESIGN -- the log is the safety tool:) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 586.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 571.89 Tm (report an event, the reviewer sees the exact context.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 553.89 Tm (Report queue reuses the claims admin pattern; host remove-member is instant and logged;) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 553.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 538.89 Tm (blocked-word filter on bubble.post at write time.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 520.89 Tm (Rooms are scoped to subject/topic and capped at 12 participants in v1; the host controls) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 520.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 505.89 Tm (the door \(open/invite-code\).) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 476.89 Tm (Risks and honest costs) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 454.89 Tm (Realtime cost at scale -- fine at launch numbers \(dozens of rooms\), revisit when hundreds) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 454.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 439.89 Tm (of concurrent rooms exist.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 421.89 Tm (Voice/video is CUT for v1. Audio rides a WhatsApp or Meet call the host shares in the) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 421.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 406.89 Tm (room description; spaces carry visuals, audio lives elsewhere initially. Native voice is) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 391.89 Tm (a v2 decision gated on usage.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 373.89 Tm (Pointer noise -- coalescing + 10 Hz throttle keeps the log lean and replay smooth.) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 373.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 355.89 Tm (Moderation load -- host-led plus log-based reporting keeps the surface small; curated) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 355.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 340.89 Tm (public replays are hand-picked at first.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 311.89 Tm (Build order) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 289.89 Tm (1\) rooms + room_events + room_members tables \(migration\). 2\) Board renderer \(host-led\) +) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 274.89 Tm (avatars. 3\) Bubbles + pointers. 4\) Recording \(free -- same log\). 5\) Replay player. 6\)) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 259.89 Tm (Shelf integration + curated replays. Estimate: 3-4 weeks for recordable v1, +2 weeks for) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 244.89 Tm (the replay player. The event schema in this section is final enough to build against.) Tj ET
+0.75 0.68 0.6 RG 0.6 w 62 216.89 m 533.28 216.89 l S
+BT 0.45 0.4 0.33 rg
+/Helvetica-Oblique 9 Tf 1 0 0 1 62.00 190.89 Tm (what every feature above must obey) Tj ET
+BT /Helvetica-Bold 17 Tf 1 0 0 1 62.00 176.89 Tm (Cross-cutting decisions) Tj ET
+0.2 0.12 0.05 RG 1.1 w 62 161.89 m 533.28 161.89 l S
+BT /Helvetica 8.5 Tf 1 0 0 1 62 40 Tm (Past Graph -- research: later features) Tj ET
+BT /Helvetica-Bold 8.5 Tf 1 0 0 1 471.28 40 Tm (page 11) Tj ET
+endstream
+endobj
+27 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 26 0 R >>
+endobj
+28 0 obj
+<< /Length 4661 >>
+stream
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 770.89 Tm (Event-sourcing everywhere) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 748.89 Tm (The pattern repeats because it is the right pattern: the video quiz thread records {from,) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 733.89 Tm (to}; learn spaces record room_events; pull-a-step records step_pulled. Append-only events) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 718.89 Tm (plus derived views keep sync trivial, replay possible, and storage honest. Any new) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 703.89 Tm (interactive feature should first answer: 'what is my event log?') Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 672.89 Tm (The cheap-Android budget) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 650.89 Tm (One canvas, not many DOM nodes, for anything with >50 moving parts \(the map; the room) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 650.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 635.89 Tm (board\).) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 617.89 Tm (One aggregate query per view \(the map's per-topic rollup; the group leaderboard\).) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 617.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 602.89 Tm (Pagination everywhere else.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 584.89 Tm (No blur/shadow filters on animated surfaces; fog and room backgrounds are flat fills.) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 584.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 566.89 Tm (Client bundles stay dependency-free beyond what exists today -- Three.js \(sims expansion\)) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 566.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 551.89 Tm (is the one sanctioned addition.) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 522.89 Tm (Data model additions, all together) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 500.89 Tm (Columns: questions.status \(draft/review/live, backfilled live\); attempts.pulled \(int) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 500.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 485.89 Tm (default 0\).) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 467.89 Tm (Tables: groups + group_members; rooms + room_events + room_members; creator_program +) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 467.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 452.89 Tm (creator_payouts.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 434.89 Tm (Reused as-is: saved_items \(lift-out\), attempts \(fog map, groups\), payments \(everything) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 434.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 419.89 Tm (commercial\), events \(interaction log\).) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 390.89 Tm (Moderation and safety, one policy) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 368.89 Tm (No DMs anywhere in v1; every social surface is logged and reportable.) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 368.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 350.89 Tm (Reports land in one queue with context attached \(the event, the room state, the) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 350.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 335.89 Tm (question\).) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 317.89 Tm (Premium content never leaks through sharing surfaces -- links re-gate at read time) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 317.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 302.89 Tm (\(beat-my-path, lift-out, replays all obey\).) Tj ET
+BT /Helvetica-Bold 12.5 Tf 1 0 0 1 62.00 273.89 Tm (Build order across all of it) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 251.89 Tm (P0 \(now\): fog map -- needs the topic audit, which improves everything else too. P1 \(this) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 236.89 Tm (month\): pull-a-step + lift-out -- small, immediate, visible. P2: groups and ranks -- the) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 221.89 Tm (social floor. P3: authoring studio -- quality pipeline. P4: learn spaces v1 -- recordable) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 206.89 Tm (rooms. P5: replay player + creator program -- content at scale. Rationale: the fog map is) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 191.89 Tm (the differentiator students screenshot; the small items buy goodwill in days; rooms need) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 62.00 176.89 Tm (their event schema landed with groups' social trust already proven.) Tj ET
+0.75 0.68 0.6 RG 0.6 w 62 148.89 m 533.28 148.89 l S
+BT /Helvetica 8.5 Tf 1 0 0 1 62 40 Tm (Past Graph -- research: later features) Tj ET
+BT /Helvetica-Bold 8.5 Tf 1 0 0 1 471.28 40 Tm (page 12) Tj ET
+endstream
+endobj
+29 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 28 0 R >>
+endobj
+30 0 obj
+<< /Length 3414 >>
+stream
+BT 0.45 0.4 0.33 rg
+/Helvetica-Oblique 9 Tf 1 0 0 1 62.00 767.89 Tm (what we chose and why, recorded for the next reader) Tj ET
+BT /Helvetica-Bold 17 Tf 1 0 0 1 62.00 753.89 Tm (Decision log) Tj ET
+0.2 0.12 0.05 RG 1.1 w 62 738.89 m 533.28 738.89 l S
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 716.89 Tm (Host-led rooms over CRDT canvases -- ordered events are what replay needs anyway.) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 716.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 698.89 Tm (Store events, not snapshots -- replay, sync and storage all simplify.) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 698.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 680.89 Tm (Canvas over DOM for the map -- one render, no reflow, cheap Android survives.) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 680.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 662.89 Tm (Attempts as the single source of truth for fog -- no parallel progress table to drift out) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 662.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 647.89 Tm (of sync.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 629.89 Tm (URL-encoded social features \(beat-my-path, shared trays\) -- zero DB, zero moderation) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 629.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 614.89 Tm (surface, WhatsApp-native.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 596.89 Tm (Flutterwave hosted page over dynamic virtual accounts -- verify_by_reference and the) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 596.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 581.89 Tm (verif-hash webhook are reliable, and no schema change is needed.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 563.89 Tm (Kind-aware grading server-side \(single/multi/blanks\) -- the client never asserts) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 563.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 548.89 Tm (correctness.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 530.89 Tm (is_free GENERATED from year >= 2021 -- the free/premium line is data, never a flag) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 530.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 515.89 Tm (someone forgets to set.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 497.89 Tm (Three.js sanctioned as the one new client dependency -- for the directly interactive sims) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 497.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 482.89 Tm (expansion.) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 464.89 Tm (Hand-rolled text-only PDF writers \(this document, printable trays\) -- no dependency, full) Tj ET
+BT /Helvetica-Bold 10.5 Tf 1 0 0 1 64.00 464.89 Tm (*) Tj ET
+BT /Helvetica 10.5 Tf 1 0 0 1 78.00 449.89 Tm (control, good enough.) Tj ET
+BT 0.4 0.35 0.28 rg
+/Helvetica-Oblique 9.5 Tf 1 0 0 1 62.00 431.89 Tm (Next implementation sprint after this batch: Three.js interactive simulations and longer videos) Tj ET
+BT 0.4 0.35 0.28 rg
+/Helvetica-Oblique 9.5 Tf 1 0 0 1 62.00 418.89 Tm (with fetched transcripts feeding richer annotations. Those designs live in the session notes; this) Tj ET
+BT 0.4 0.35 0.28 rg
+/Helvetica-Oblique 9.5 Tf 1 0 0 1 62.00 405.89 Tm (document covers everything deferred beyond them.) Tj ET
+BT /Helvetica 8.5 Tf 1 0 0 1 62 40 Tm (Past Graph -- research: later features) Tj ET
+BT /Helvetica-Bold 8.5 Tf 1 0 0 1 471.28 40 Tm (page 13) Tj ET
+endstream
+endobj
+31 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 30 0 R >>
+endobj
+xref
+0 32
+0000000000 65535 f 
+0000000064 00000 n 
+0000000205 00000 n 
+0000000302 00000 n 
+0000000404 00000 n 
+0000000509 00000 n 
+0000001370 00000 n 
+0000001522 00000 n 
+0000003163 00000 n 
+0000003315 00000 n 
+0000008327 00000 n 
+0000008481 00000 n 
+0000013650 00000 n 
+0000013804 00000 n 
+0000018252 00000 n 
+0000018406 00000 n 
+0000022645 00000 n 
+0000022799 00000 n 
+0000027364 00000 n 
+0000027518 00000 n 
+0000032172 00000 n 
+0000032326 00000 n 
+0000037127 00000 n 
+0000037281 00000 n 
+0000042745 00000 n 
+0000042899 00000 n 
+0000047621 00000 n 
+0000047775 00000 n 
+0000052489 00000 n 
+0000052643 00000 n 
+0000056110 00000 n 
+0000056264 00000 n 
+trailer
+<< /Size 32 /Root 1 0 R >>
+startxref
+56264
+%%EOF

@@ -2,11 +2,14 @@
 
 /**
  * Premium checkout:
- *  - "Card" opens the Paystack inline popup (card, transfer, USSD…).
- *  - "Bank transfer" opens the same popup with only the transfer channel —
- *    Paystack displays the account number to pay into.
+ *  - Paystack (default): "Card" opens the inline popup; "Bank transfer" opens
+ *    the same popup with only the transfer channel — the account number
+ *    appears in-window.
+ *  - Flutterwave (NEXT_PUBLIC_PAYMENT_PROVIDER=flutterwave): both buttons
+ *    redirect to Flutterwave's hosted page; the return lands on /pricing/success
+ *    with tx_ref, which verifies server-side.
  *  - No bank keys? A manual claim form captures the transfer reference for review.
- * Premium flips server-side (verify route / webhook), never from the client.
+ * Premium flips server-side (verify routes / webhooks), never from the client.
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -15,6 +18,9 @@ import { createClient } from "@/utils/supabase/client";
 type Phase = "idle" | "starting" | "popup" | "verifying" | "paid" | "error";
 
 const PAYSTACK_INLINE = "https://js.paystack.co/v2/inline.js";
+
+/** Provider switch — build-time env; "paystack" is the default. */
+const PROVIDER = (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER ?? "paystack").toLowerCase();
 
 interface PaystackWindow extends Window {
   PaystackPop?: {
@@ -77,7 +83,7 @@ export default function CheckoutSection() {
       window.setTimeout(() => window.location.reload(), 1500);
     } else if (data.error === "not_configured") {
       setPhase("error");
-      setMessage("Payments are not wired yet — add the Paystack keys.");
+      setMessage("Payments are not wired yet — add the provider keys.");
     } else {
       setPhase("error");
       setMessage(data.status ? `Payment shows ${data.status}. If you paid by transfer, it can take a minute — we'll confirm it.` : "We couldn't confirm that payment. Try verify again or pay by manual transfer below.");
@@ -93,6 +99,27 @@ export default function CheckoutSection() {
     }
     setPhase("starting");
     try {
+      if (PROVIDER === "flutterwave") {
+        const res = await fetch("/api/checkout/flutterwave", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ method }),
+        });
+        if (res.status === 503) {
+          setPhase("error");
+          setMessage("Live payments are off. Use the manual transfer route below — it lands the same premium.");
+          return;
+        }
+        const data = (await res.json()) as { link?: string; error?: string };
+        if (!data.link) {
+          setPhase("error");
+          setMessage(data.error === "unauthenticated" ? "Sign in first." : "Payment couldn't start. Try again.");
+          return;
+        }
+        setPhase("popup");
+        window.location.href = data.link; // hosted page; the return lands on /pricing/success
+        return;
+      }
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -210,8 +237,9 @@ export default function CheckoutSection() {
         </div>
       )}
       <p className="text-[12px] muted mt-3 leading-relaxed">
-        Bank transfer shows your dedicated account number in the Paystack window when the business is enabled for
-        dynamic accounts. Premium flips only after our server verifies with Paystack — never from this page.
+        {PROVIDER === "flutterwave"
+          ? "Bank transfer shows your dedicated account number on Flutterwave's secure hosted page. Premium flips only after our server verifies with Flutterwave — never from this page."
+          : "Bank transfer shows your dedicated account number in the Paystack window when the business is enabled for dynamic accounts. Premium flips only after our server verifies with Paystack — never from this page."}
       </p>
       <style jsx>{`
         .input {

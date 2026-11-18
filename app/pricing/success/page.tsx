@@ -3,22 +3,29 @@
 import { useEffect, useState } from "react";
 
 /**
- * Paystack callback target: /pricing/success?reference=...
- * Server verifies the reference against Paystack before premium flips.
+ * Checkout callback target for both providers:
+ *  - Paystack: /pricing/success?reference=...
+ *  - Flutterwave: /pricing/success?tx_ref=pgflw-…  (hosted-page redirect)
+ * The server verifies against the provider before premium flips.
  */
 export default function PricingSuccess() {
   const [state, setState] = useState<"working" | "paid" | "pending" | "error">("working");
-  const [detail, setDetail] = useState<string>("Making sure with Paystack…");
+  const [detail, setDetail] = useState<string>("Making sure with your payment provider…");
 
   useEffect(() => {
-    const reference = new URLSearchParams(window.location.search).get("reference");
+    const sp = new URLSearchParams(window.location.search);
+    const txRef = (sp.get("tx_ref") ?? "").trim();
+    const paystackRef = (sp.get("reference") ?? "").trim();
+    const reference = txRef || paystackRef;
     if (!reference) {
       setState("pending");
       setDetail("No reference in the link — if you paid by transfer, hold on for the webhook; otherwise return to pricing.");
       return;
     }
+    const isFlw = reference.startsWith("pgflw-");
+    const provider = isFlw ? "Flutterwave" : "Paystack";
     (async () => {
-      const res = await fetch("/api/checkout/verify", {
+      const res = await fetch(isFlw ? "/api/checkout/flutterwave/verify" : "/api/checkout/verify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ reference }),
@@ -29,10 +36,10 @@ export default function PricingSuccess() {
         setDetail("Premium is live until " + new Date(data.premium_until ?? "").toLocaleDateString());
       } else if (data.status && data.status !== "success") {
         setState("pending");
-        setDetail(`Paystack reports this payment as ${data.status}. Transfers can take a couple of minutes.`);
+        setDetail(`${provider} reports this payment as ${data.status}. Transfers can take a couple of minutes.`);
       } else {
         setState("error");
-        setDetail("We couldn't confirm that payment yet. Give the webhook a minute, or contact support.");
+        setDetail(`We couldn't confirm that payment yet. Give the webhook a minute, or contact support. (${provider})`);
       }
     })();
   }, []);

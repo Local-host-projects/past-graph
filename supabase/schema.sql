@@ -43,7 +43,7 @@ create table public.questions (
   options      jsonb not null,
   answer       text not null,
   explanation  text not null default '',
-  kind         text not null default 'single' check (kind in ('single','multi')),
+  kind         text not null default 'single' check (kind in ('single','multi','blanks')),
   steps        jsonb,
   difficulty   int  not null default 2 check (difficulty between 1 and 3),
   is_free      boolean generated always as (year >= 2021) stored,

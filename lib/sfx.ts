@@ -8,7 +8,7 @@
  *  - Utility: only 5 sounds exist; everything else in the app is silent.
  */
 
-type Voice = "tick" | "correct" | "wrong" | "open" | "complete" | "lock";
+type Voice = "tick" | "correct" | "wrong" | "open" | "complete" | "lock" | "thread";
 
 let ctx: AudioContext | null = null;
 let master: GainNode | null = null;
@@ -77,6 +77,11 @@ export function sfx(voice: Voice) {
     // material arriving (panel / sheet): breathy upward sweep
     case "open":
       tone(420, 0, 0.16, "sine", 0.035, 840);
+      break;
+    // the return thread snapping home: a quick elastic fall-and-settle
+    case "thread":
+      tone(620, 0, 0.16, "sine", 0.06, 180);
+      tone(240, 0.13, 0.2, "triangle", 0.045, 330);
       break;
     // small pocket for locked premium years
     case "lock":

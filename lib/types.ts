@@ -15,7 +15,7 @@ export type Question = {
   options: { label: string; text: string }[];
   answer: string;
   explanation: string;
-  kind: "single" | "multi";
+  kind: "single" | "multi" | "blanks";
   steps: Step[] | null;
   difficulty: number;
   is_free: boolean;

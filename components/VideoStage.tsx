@@ -77,6 +77,11 @@ export default function VideoStage() {
   const [panel, setPanel] = useState<Panel | null>(null);
   const [loading, setLoading] = useState(true);
   const [wide, setWide] = useState(false);
+  const [dur, setDur] = useState(0);
+  /* the return thread: {from, to} ties the moment a quiz sent the viewer back
+     to the moment they left. when the returned-to section plays through its
+     end, the thread pulls them straight home. cancellable at any time. */
+  const [thread, setThread] = useState<{ from: number; to: number } | null>(null);
 
   /* ---- retrieval popups: the video quizzes you on its own past -------------------
      entering section k pulls a question from section k-1's topic; a wrong answer
@@ -166,6 +171,7 @@ export default function VideoStage() {
           playerVars: { enablejsapi: 1, origin: window.location.origin, rel: 0, modestbranding: 1, playsinline: 1 },
           events: {
             onReady: (e: any) => {
+              setDur(e.target.getDuration?.() ?? 0);
               if (bootT != null) e.target.seekTo(bootT, true);
               e.target.playVideo();
               /* exposed for test drives: seeking the real player from evaluate() */
@@ -210,6 +216,24 @@ export default function VideoStage() {
     }
   }, [now, quizzes, quiz, panel]);
 
+  /* ---- the return thread: when the returned-to section ends, snap home ------- */
+  useEffect(() => {
+    if (!thread) return;
+    const sec = annotations.find((a) => thread.to >= a.t_start && thread.to < a.t_end);
+    if (!sec) return; // no anchor section — the thread just rides along
+    if (now >= sec.t_end) {
+      const p = playerRef.current;
+      setThread(null);
+      sfx("thread");
+      /* resume a breath past the boundary so the crossing doesn't re-fire */
+      p?.seekTo?.(thread.from + 1, true);
+      p?.playVideo?.();
+    } else if (now < thread.to - 4) {
+      /* navigated away on their own — the thread unties itself */
+      setThread(null);
+    }
+  }, [now, thread, annotations]);
+
   function answerQuiz(letter: string) {
     if (!quiz || quizPick) return;
     setQuizPick(letter);
@@ -232,6 +256,10 @@ export default function VideoStage() {
 
   function returnToSection() {
     if (!quiz) return;
+    /* tie the return thread: when this earlier section plays through, the
+       viewer is pulled straight back to where they left the story */
+    setThread({ from: quiz.when_t, to: quiz.back_t });
+    sfx("open");
     seek(quiz.back_t);
     closeQuiz();
   }
@@ -439,6 +467,31 @@ export default function VideoStage() {
                       </div>
                     )}
                   </div>
+                </div>
+              )}
+              {/* the return thread: an elastic tie between the two moments,
+                  drawn along the video's own timeline */}
+              {thread && dur > 0 && (
+                <>
+                  <svg className="return-thread" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+                    <path
+                      d={`M ${((thread.to / dur) * 100).toFixed(2)} 34 Q ${(((thread.to + thread.from) / 2 / dur) * 100).toFixed(2)} 4 ${((thread.from / dur) * 100).toFixed(2)} 34`}
+                      vectorEffect="non-scaling-stroke"
+                    />
+                  </svg>
+                  <span className="thread-dot" style={{ left: `${((thread.to / dur) * 100).toFixed(2)}%` }} aria-hidden="true" />
+                  <span className="thread-dot" style={{ left: `${((thread.from / dur) * 100).toFixed(2)}%` }} aria-hidden="true" />
+                </>
+              )}
+              {thread && (
+                <div className="thread-pill" role="status">
+                  <span className="thread-knot" aria-hidden="true">⌇</span>
+                  <span className="truncate">
+                    Thread tied — pulled back to <strong>{fmt(thread.from)}</strong> when this section ends
+                  </span>
+                  <button className="x shrink-0" aria-label="Untie the return thread" onClick={() => { setThread(null); sfx("tick"); }}>
+                    ✕
+                  </button>
                 </div>
               )}
               {/* the pop-up lives ON the video — unmissable, never docked under it */}

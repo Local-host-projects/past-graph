@@ -54,3 +54,14 @@ create index if not exists claims_status_idx on public.transfer_claims (status) 
 alter table public.sims drop constraint if exists sims_kind_check;
 alter table public.sims add constraint sims_kind_check
   check (kind in ('projectile','wave','ohm','punnett','demand','snell'));
+
+-- ─────────────────────────────────────────────────────────────────────────
+-- Annotation blanks: a new question kind (token-tray fill-in — the stem
+-- carries ___1___-style slots, options are the word bank). The renderer is
+-- components/BlankView.tsx; grading is kind-aware in /api/attempt.
+-- Idempotent — run in the Supabase SQL editor, then rerun
+--   node scripts/expand-content.mjs --go
+-- ─────────────────────────────────────────────────────────────────────────
+alter table public.questions drop constraint if exists questions_kind_check;
+alter table public.questions add constraint questions_kind_check
+  check (kind in ('single','multi','blanks'));
