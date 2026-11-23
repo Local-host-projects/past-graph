@@ -51,7 +51,8 @@ export default function SimsLab() {
     <div className="max-w-5xl mx-auto px-5 sm:px-8 py-8">
       <h1 className="display text-[34px] sm:text-[44px]">Sims lab</h1>
       <p className="muted mt-1.5 text-[15px] max-w-[65ch]">
-        Move a slider, watch the model redraw. These same canvases open beside questions and timestamped videos.
+        Grab them. Every model here answers to your hand — aim the cannon, stretch the wave, drag the resistor.
+        These same boards open beside questions and timestamped videos.
       </p>
       {loading ? (
         <p className="muted text-[14px] mt-10">Loading…</p>
