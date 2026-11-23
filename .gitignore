@@ -10,3 +10,8 @@ dev-log.txt
 build-log.txt
 install.log
 dev-err.txt
+
+# raw caption dumps (large); the compact .txt versions are committed
+scripts/transcripts/*.json
+scripts/transcripts/raw/
+.pg-*.out
