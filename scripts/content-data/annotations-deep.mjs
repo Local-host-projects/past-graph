@@ -803,4 +803,343 @@ export const DEEP = {
       body: "Theoretical yield is what the balanced equation permits; actual yield is what the flask delivered; percent yield is the ratio. '90% efficient' is just percent yield written in a different costume.",
     },
   ],
+
+  /* ------------------------------------------------------------- dutch wealth */
+  Ot4qdCs54ZE: [
+    {
+      t: 41, end: 82, title: "The most unequal place on earth",
+      body: "The Netherlands has universal healthcare, strong pensions and famously high taxes — and, on World Bank wealth-inequality figures, it is the only country more unequal than the world taken as a whole. Both facts are true at once, which is the puzzle.",
+    },
+    {
+      t: 82, end: 124, title: "The policy being exported",
+      body: "Nordic-style taxes and transfers are proposed elsewhere as the cure for wealth inequality. The Dutch case is the natural test: if the policies worked, this is what success should look like. It does not look like that.",
+    },
+    {
+      t: 164, end: 206, title: "Gini in three people and three dollars",
+      body: "Three people share three dollars a year. One dollar each gives a Gini of 0; one person taking all three gives 1. Every real economy sits between those bounds, so the number is a position, not a moral verdict.",
+    },
+    {
+      t: 206, end: 247, title: "The y = x line",
+      body: "Plot cumulative share of people against cumulative share of income. Perfect equality is the 45° diagonal: the first person has 1, the first two have 2, all three have 3. Any bowing below the diagonal is inequality.",
+    },
+    {
+      t: 247, end: 288, title: "One number, two different questions",
+      body: "The same coefficient is computed for income and for wealth, and the two answers diverge sharply. Headlines quote income inequality because it is easier to measure and easier to blame on a CEO's salary.",
+    },
+    {
+      t: 288, end: 329, title: "Income is the tap, wealth is the tank",
+      body: "People who earn more can save more, and savings compound. If incomes were levelled, the flow into the tank would shrink — so equalising income should, in theory, starve wealth inequality at the source.",
+    },
+    {
+      t: 329, end: 370, title: "Sweden is more unequal than the US",
+      body: "Sweden, Denmark, Finland and Norway score very low on income inequality and very high on wealth inequality. Sweden's wealth Gini exceeds that of the United States, Brazil and India — the theory above has failed.",
+    },
+    {
+      t: 370, end: 411, title: "Net worth has no floor at zero",
+      body: "After-tax income cannot go below zero; net worth can. A graduate with large student loans, no house and no car has negative wealth, and no income table will ever show it.",
+    },
+    {
+      t: 411, end: 452, title: "Borrowing more than the house is worth",
+      body: "Most banks demand a deposit so the borrower has skin in the game. The Dutch national mortgage guarantee removes that: the government reimburses the lender's shortfall, so loans can cover 100% of the price or more.",
+    },
+    {
+      t: 452, end: 493, kind: "article", article: "market-intervention",
+      title: "Interest you can deduct from tax",
+      body: "Earn €100,000, pay €40,000 of mortgage interest, and you are taxed on €60,000. That is a subsidy to borrowing dressed as a tax rule — the same wedge between price paid and price received that the article works through.",
+    },
+    {
+      t: 493, end: 534, title: "110% of the value, minus €30,000",
+      body: "A couple buys a €300,000 home and borrows €330,000. Instantly their net worth is −€30,000, yet they live comfortably. The metric records a peasant; the household records a normal young family.",
+    },
+    {
+      t: 534, end: 575, title: "Credit is a ladder and a distortion",
+      body: "Access to responsible credit is one of the strongest determinants of social mobility. It also inflates wealth-inequality measures beyond anything policy can reach — the Trump 'poorer than a homeless man' joke makes the accounting point.",
+    },
+    {
+      t: 575, end: 616, title: "Four hundred years without a reset",
+      body: "The Netherlands is where economists locate recognisably modern capitalism: stock markets, limited liability, speculative assets, all by the 1600s. Europe's wars and coups never wiped out the accumulated fortunes the way revolutions elsewhere did.",
+    },
+    {
+      t: 656, end: 698, title: "The Heineken name is younger than the money",
+      body: "Charlene de Carvalho is the country's wealthiest person. Her great-grandfather did not found Heineken; he persuaded his already-wealthy parents to buy a brewery and put the family name on it. The capital came from the Dutch East India Company era.",
+    },
+    {
+      t: 698, end: 739, title: "No income since Napoleon",
+      body: "This family has not earned a salary in two centuries, so an income tax — however steep — cannot touch it. Taxes on flows cannot reach a stock that compounds quietly in the background.",
+    },
+    {
+      t: 739, end: 780, title: "10% for a century beats 100% for a decade",
+      body: "$10,000 doubling for ten years reaches $10.24M. The same $10,000 at an ordinary 10% for a hundred years reaches $137.8M plus change. Time in the market dominates the rate of return — and dynasties have time.",
+    },
+    {
+      t: 820, end: 861, title: "Primogeniture, kept quiet",
+      body: "Dynastic fortunes survive by not being split: one trained heir keeps the assets intact while siblings live comfortably on allowances. The Giving Pledge touches the visible Forbes list; hundreds of families below the radar do the compounding.",
+    },
+    {
+      t: 861, end: 902, title: "Inequality is not the same as misery",
+      body: "The bottom 10% in the Netherlands are better off than the top 10% in a far more equal Ethiopia. What matters is whether systems let people rise and whether average comfort is protected — not the coefficient by itself.",
+    },
+  ],
+
+  /* ----------------------------------------------------------- least action */
+  "Q10_srZ-pbs": [
+    {
+      t: 2, end: 43, title: "One rule under everything",
+      body: "Mechanics, electromagnetism, quantum theory, general relativity: all of it can be rewritten as a statement that a single quantity is stationary along the path taken. That is a strange claim, and the video spends half an hour earning it.",
+    },
+    {
+      t: 43, end: 85, title: "The fastest ramp is not the shortest",
+      body: "Slide a mass from A to B. The straight line is shortest, but bending the start downward buys speed early, and speed beats distance. The brachistochrone problem is to find the shape that balances the two.",
+    },
+    {
+      t: 85, end: 127, title: "Galileo guessed a circle",
+      body: "Galileo showed an arc of a circle beats any polygon, but could not prove it optimal. In June 1696 Johann Bernoulli threw the problem open to the world's mathematicians — largely to prove he was the best of them.",
+    },
+    {
+      t: 127, end: 168, title: "Newton finishes it by 4 a.m.",
+      body: "Newton, then Warden of the Mint, came home to the challenge, stayed up, and solved it overnight — work that took Bernoulli two weeks. He published anonymously; Bernoulli: 'I recognise the lion by his claw.'",
+    },
+    {
+      t: 168, end: 209, title: "Bernoulli's better idea",
+      body: "Bernoulli's own solution borrowed from optics. Fermat had argued that light minimises travel time, so Bernoulli imagined the sliding mass as a ray crossing ever-thinner layers of ever-faster medium. Mechanics became refraction.",
+    },
+    {
+      t: 209, end: 250, title: "Hero's shortest path",
+      body: "Hero of Alexandria noticed light takes the shortest path in a single medium, which explains why the angle of incidence equals the angle of reflection. Every other route to the mirror is longer.",
+    },
+    {
+      t: 250, end: 291, kind: "article", article: "snells-law-in-one-page",
+      title: "Refraction breaks the shortest path",
+      body: "At a boundary light bends, so distance is clearly not what is minimised: a straight line through the water would be shorter. The ratio sin θ₁ / sin θ₂ is constant, but nobody knew why until Fermat.",
+    },
+    {
+      t: 291, end: 332, title: "Fermat minimises time, not distance",
+      body: "Light travels slower in water, so the quickest route bends toward the faster medium. Fermat could not initially solve the optimisation — every possible crossing point would have to be checked — and set it aside for five years.",
+    },
+    {
+      t: 332, end: 373, title: "Snell's law falls out of least time",
+      body: "When Fermat did solve it, the constant n turned out to be the ratio of light speeds in the two media, and Snell's law appeared as the minimising path. He called it the happiest calculation of his life.",
+    },
+    {
+      t: 373, end: 414, title: "Nature as an optimiser",
+      body: "This was the first demonstration that nature obeys an optimisation principle — that light does the best possible thing. That idea, not the algebra, is what Bernoulli carried into mechanics.",
+    },
+    {
+      t: 458, end: 540, title: "Speed must grow like √y",
+      body: "A falling mass converts potential energy to kinetic, so v² ∝ y, the distance fallen. In the optical model the speed of light must therefore increase as the square root of depth — an odd medium, but it matches gravity.",
+    },
+    {
+      t: 540, end: 623, title: "Snell at every layer, then a cycloid",
+      body: "Apply Snell at each interface: the outgoing angle of one layer is the incoming angle of the next, so sin θ / √y is the same everywhere. Bernoulli recognised that condition as the equation of a cycloid — the fastest descent, and also tautochronous: release from any height and you arrive together.",
+    },
+    {
+      t: 623, end: 664, title: "Two fields, one problem",
+      body: "Bernoulli boasted that he had solved an optical and a mechanical problem at a single stroke. He did not yet know that this was a special case of something much larger.",
+    },
+    {
+      t: 663, end: 744, title: "Maupertuis invents action",
+      body: "Forty years later Maupertuis asked why nature should care about time at all, and proposed a deeper quantity: action = mass × velocity × distance. A 5 kg ball rolling 6 m at 3 m/s has 90 units; split the trip into two legs and you simply add them. The path taken is the one with least total action.",
+    },
+    {
+      t: 747, end: 829, title: "Ridiculed, and partly fairly",
+      body: "Samuel König accused Maupertuis of plagiarism from Leibniz and wrote a 32-page pamphlet mocking him. The deeper problem: Maupertuis had picked the quantity out of thin air and offered no proof that nature should minimise it.",
+    },
+    {
+      t: 829, end: 913, title: "Euler defends it, then sharpens it",
+      body: "Euler replaced the discrete sum with an integral so action could be computed along a continuously curving path, and used it to derive orbits. He also found two conditions Maupertuis had missed: energy must be conserved, and equal across the paths being compared.",
+    },
+    {
+      t: 955, end: 1037, title: "Lagrange, nineteen years old",
+      body: "Lagrange shared a refinement of Euler's method in 1754; Euler replied that it raised the theory to the summit of perfection. Five years later, a year after Maupertuis died, Lagrange produced the general proof.",
+    },
+    {
+      t: 1037, end: 1121, title: "Minima by the same trick as calculus",
+      body: "At a minimum, a tiny step either way barely changes the value, because the first-order term vanishes. For paths: perturb the true path by η(t), and the change in action is zero to first order. Second order may be positive, so it behaves like a parabola.",
+    },
+    {
+      t: 1121, end: 1203, title: "The trial path and the true path",
+      body: "Write the action of the true path y(t) and of a nudged path q(t) = y + η. Subtract, expand, and keep only terms linear in η. The statement that this difference vanishes to first order is the compact form of least action.",
+    },
+    {
+      t: 1203, end: 1326, title: "From mv·ds to ∫(T − V)dt",
+      body: "Rewrite Maupertuis's integral: mv ds becomes mv² dt, which is twice the kinetic energy. Using T + V = E and holding the travel time fixed, the E·δt term drops out and what remains is the variation of ∫(T − V)dt being zero.",
+    },
+    {
+      t: 1326, end: 1408, title: "Hamilton gets the name",
+      body: "In 1834 William Rowan Hamilton wrote the principle in exactly that form, with L = T − V. So the modern statement is Hamilton's principle even though the idea is Maupertuis's — terminology rewards the final notation.",
+    },
+    {
+      t: 1408, end: 1491, title: "Throw a ball straight up",
+      body: "Fix the start, the end and the flight time. Infinitely many curves connect them — higher, lower, wiggly. Only one is physical, and the claim is that it makes ∫(T − V)dt stationary. Expand the trial path in η and require the first-order change to vanish.",
+    },
+    {
+      t: 1491, end: 1573, title: "Integration by parts ends the argument",
+      body: "Integrate by parts and the boundary terms vanish because the endpoints are fixed. What is left is an integral of something times η(t) over the whole interval, which must be zero for every η — so that something must itself be zero everywhere.",
+    },
+    {
+      t: 1573, end: 1657, title: "That something is F = ma",
+      body: "−dV/dy is force and d²y/dt² is acceleration, so the surviving condition is m a = F. Least action is not a rival to Newton's second law; it is the same law obtained by a different route. Fermat's least time becomes a special case.",
+    },
+    {
+      t: 1656, end: 1738, title: "Why physicists actually use it",
+      body: "Write T − V, plug it into the Euler–Lagrange equation, and the equation of motion comes out. No resolving forces or guessing directions. In a double pendulum the lower bob sits in a moving frame, so forces are a mess; energies are scalars and add simply.",
+    },
+    {
+      t: 1738, end: 1821, title: "'Least' is a slight misnomer",
+      body: "Setting a derivative to zero finds stationary points, not necessarily minima. The honest name is the principle of stationary action: usually a minimum, sometimes a saddle or maximum, always a point where first-order changes vanish. It also works in polar coordinates, where vector mechanics gets ugly.",
+    },
+    {
+      t: 1821, end: 1866, title: "Action is where quantum mechanics starts",
+      body: "Around 1900 the ultraviolet catastrophe was resolved by quantising action, not energy or force — Planck's constant has units of action. The classical principle points directly at the quantum one.",
+    },
+  ],
+
+  /* --------------------------------------------------------- periodic table */
+  kqe9tEcZkno: [
+    {
+      t: 2, end: 43, title: "150 years, 118 elements",
+      body: "2019 was the International Year of the Periodic Table: 150 years since Mendeleev's 1869 publication. The table exists to turn 118 unrelated elements into an ordered system you can reason with.",
+    },
+    {
+      t: 43, end: 85, title: "Mendeleev's groups ran sideways",
+      body: "The 1869 table is in Russian, and its families of similar elements run in horizontal rows. He revised the layout later; the vertical-column version is the one everyone now recognises.",
+    },
+    {
+      t: 85, end: 126, title: "One system, many shapes",
+      body: "A pre-1869 version wraps around a cylinder; Cambridge built a huge version on a lawn so that order appears only from one viewpoint. A periodic table is defined by its order and grouping, not by its silhouette.",
+    },
+    {
+      t: 246, end: 287, title: "Chemistry needs only three particles",
+      body: "Protons in the nucleus, neutrons adding mass, electrons outside. A neutral atom has equal protons and electrons; physicists can smash further into quarks, but chemistry never needs to.",
+    },
+    {
+      t: 287, end: 328, title: "The proton count is the identity card",
+      body: "Hydrogen is element one because it has exactly one proton; helium is two. Neutrons change the mass and the isotope, not the chemical identity.",
+    },
+    {
+      t: 328, end: 411, title: "Order is necessary but not sufficient",
+      body: "Li 3, Be 4, B 5, C 6, N 7, O 8, F 9, Ne 10: each step adds one proton and one electron. But the 1869 insight was that the columns must also gather elements with matching chemistry.",
+    },
+    {
+      t: 411, end: 452, kind: "article", article: "periodic-group-first",
+      title: "Read it by group, not by row",
+      body: "The row tells you the size and the proton count; the column tells you the chemistry. This article drills the habit of asking 'which group?' before counting electrons.",
+    },
+    {
+      t: 452, end: 534, title: "One outer electron explains group 1",
+      body: "Li, Na, K, Rb and Cs all have a single electron in the outermost shell, and it is easy to lose. That shared loss produces the shared reactions — and why francium, the heaviest, is omitted: its nucleus tears itself apart, emitting an alpha particle that is a helium nucleus.",
+    },
+    {
+      t: 536, end: 618, title: "Count the outer electrons across the block",
+      body: "Group 2 carries two, group 13 three, group 14 four, group 15 five, 16 six, 17 halogens seven, 18 noble gases eight. This count — not the row — is the periodic table's main variable.",
+    },
+    {
+      t: 618, end: 700, title: "The halogens will attack almost anything",
+      body: "Fluorine was in Mendeleev's table before anyone had isolated it; Davy nearly killed himself trying, and others succeeded fatally. Chlorine is a green-yellow gas, bromine a stinking brown liquid, iodine a violet solid.",
+    },
+    {
+      t: 743, end: 826, title: "Weak bonds, violet cloud",
+      body: "Nitrogen triiodide holds N–I bonds so weak that a touch rearranges them into extremely strong N≡N, releasing the energy as a sharp crack. The visible product is iodine vapour — the purple cloud.",
+    },
+    {
+      t: 871, end: 912, title: "Halogen means salt maker",
+      body: "Iodine's brown solution is the household disinfectant. The group name comes from the ease with which these elements form salts: sodium plus chlorine gives sodium chloride, ordinary table salt.",
+    },
+    {
+      t: 912, end: 994, title: "The group Mendeleev could not have",
+      body: "Every noble gas was discovered after his table, and he dismissed the solar helium suggestion. Argon is the third most abundant gas in air at about 1%, yet chemists missed it for a century because it does nothing.",
+    },
+    {
+      t: 994, end: 1078, title: "Inert because they are complete",
+      body: "Helium and neon form no compounds at all; krypton, xenon and radon only with the most aggressive elements. All are gases, and they exist as lone atoms rather than bonded molecules.",
+    },
+    {
+      t: 1159, end: 1240, title: "Equal volumes, equal particles",
+      body: "Same volume, pressure and temperature means the same number of particles, whatever the gas. So the helium, neon and xenon balloons hold similar atom counts even though the xenon one is heavy enough to sink the balloon.",
+    },
+    {
+      t: 1286, end: 1328, title: "Transition metals, and two rows in exile",
+      body: "The dark blue block holds titanium, iron, copper, gold and mercury. The lanthanides and actinides belong in the main body but are footnoted to the bottom purely so the table fits on a page.",
+    },
+    {
+      t: 1370, end: 1533, title: "The candle test for two balloons",
+      body: "Hydrogen travels as H₂ molecules; helium as single atoms. A lit splint extinguishes in helium because it is inert, but pops in hydrogen as H₂ + O₂ makes water — one proton of difference, completely different behaviour.",
+    },
+    {
+      t: 1533, end: 1615, title: "Lavoisier's list contained light",
+      body: "His 1789 list of elements includes light and caloric as substances, because they seemed to be released by reactions. He did name hydrogen 'water maker', from the water it forms with oxygen.",
+    },
+    {
+      t: 1653, end: 1776, title: "Burning iron gains mass",
+      body: "Heated iron wool reacts with oxygen and gets heavier by the mass of oxygen it takes up — no iron is lost. The early dip is hot air becoming less dense, not matter disappearing.",
+    },
+    {
+      t: 1908, end: 2059, title: "The book that made Faraday",
+      body: "Jane Marcet's Conversations on Chemistry went through many editions and inspired a bookbinder's apprentice named Michael Faraday. Her 1806 list still counts potash and soda as elements, because nobody could decompose them.",
+    },
+    {
+      t: 2132, end: 2298, title: "Quicklime and the living rock",
+      body: "Calcium oxide poured with water hisses into steam and crumbles into calcium hydroxide. 'Quick' is old English for alive, as in quicksilver — nobody could break lime down further, so it counted as a simple substance.",
+    },
+    {
+      t: 2298, end: 2382, title: "Davy pulls out the metals, Marcet sorts by oxygen",
+      body: "Electrolysis of soda gave sodium, and of lime gave calcium, so the next editions listed new elements. With the list growing, Marcet classified substances by how they react with oxygen — the same idea Mendeleev later formalised.",
+    },
+    {
+      t: 2382, end: 2555, title: "Mendeleev prints the oxide formulae",
+      body: "His vertical groups carry generalised oxide formulae: E₂O for group 1, EO for group 2, E₂O₃, EO₂ and so on. Lithium burning in oxygen gives Li₂O, exactly the H₂O pattern, and the oxide dissolves to an alkali.",
+    },
+    {
+      t: 2638, end: 2720, title: "Sodium skitters and flames",
+      body: "A small piece fizzes across the surface and sometimes ignites; Davy doubted anything this soft and light could be a metal. Every group 1 element except hydrogen reacts with water the same way, giving an alkaline hydroxide and hydrogen gas.",
+    },
+    {
+      t: 2852, end: 2935, title: "The bang is Coulombic, not hydrogen",
+      body: "A bigger piece in the armoured tank explodes, and textbooks still blame the hydrogen. High-speed imaging shows the real cause: the metal loses electrons, becomes highly positive, and like charges blow the molten blob apart.",
+    },
+    {
+      t: 2976, end: 3057, title: "Magnesium: white light, 1:1 oxide",
+      body: "Group 2 gives MgO rather than Mg₂O, so moving one column changes the formula. Magnesium sinks and barely reacts with cold water, while calcium below it bubbles hydrogen immediately.",
+    },
+    {
+      t: 3230, end: 3437, title: "The gaps were the genius",
+      body: "Mendeleev left holes and predicted the missing elements' masses and oxide formulae; that is why his table is celebrated rather than the first one. Eka-boron — Sanskrit for 'one below boron' — became scandium, with predicted weight 44 against an actual 45 and the predicted E₂O₃ confirmed.",
+    },
+    {
+      t: 3437, end: 3521, title: "Aluminium's oxide armour",
+      body: "Aluminium foil does not burst into flame because a thin Al₂O₃ layer seals the metal. Same E₂O₃ formula as scandium oxide, so the group pattern holds even when the reaction is invisible.",
+    },
+    {
+      t: 3521, end: 3603, title: "Thermite: steal the oxygen",
+      body: "Aluminium powder plus iron oxide reacts violently, leaving aluminium oxide and molten iron. The reaction is hot enough to weld railway track in places where you cannot bring a furnace.",
+    },
+    {
+      t: 3681, end: 3972, title: "Carbon, phosphorus, sulphur: acids appear",
+      body: "Charcoal in oxygen gives CO₂, a weak acid in water. Phosphorus ('light bringer') gives P₄O₁₀ and phosphoric acid, sulphur ('brimstone') burns blue and gives SO₂/SO₃, and the oxide trend keeps climbing toward the dangerous group 7 and 8 oxides.",
+    },
+    {
+      t: 4021, end: 4189, title: "Why metals hold together",
+      body: "Outer electrons sit between neighbouring nuclei and glue them. Lithium contributes one per atom, beryllium two, boron three, carbon four — so the bonds strengthen across the row.",
+    },
+    {
+      t: 4189, end: 4311, title: "Diamond is the sweet spot",
+      body: "Four bonds per carbon give the highest melting point of any element, with tungsten the only rival; the rigid lattice also makes diamond the hardest substance and the best heat conductor, slicing ice with body heat.",
+    },
+    {
+      t: 4437, end: 4518, title: "Antibonding explains the noble gases",
+      body: "Past carbon the extra electrons go outside the nuclei and pull atoms apart, so N, O and F bond more weakly. Neon has equal bonding and antibonding electrons, net zero — hence lone atoms, and the same pattern repeats in every row.",
+    },
+    {
+      t: 4604, end: 4690, title: "The potassium mirror",
+      body: "Heat potassium in an evacuated flask and atoms boil off and condense as a silvery coating. Group 1 bonds are weak enough that gentle heating separates the atoms — the mirror darkens as oxygen leaks in.",
+    },
+    {
+      t: 4816, end: 4900, title: "Density is mass plus packing",
+      body: "Osmium and iridium are the densest because heavy atoms sit close together; past tungsten the packing loosens and density falls. Tungsten and gold end up almost identical, which is the next problem.",
+    },
+    {
+      t: 5021, end: 5062, title: "Why faked gold bars pass",
+      body: "A tungsten core has the same density as gold, so weight and X-rays cannot expose it — only cutting into the bar can. The lecture closes with one more hydrogen balloon, the most abundant element in the universe.",
+    },
+  ],
 };
